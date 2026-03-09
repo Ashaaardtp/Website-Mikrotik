@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -18,9 +18,7 @@
     <link
       rel="stylesheet"
       href="./assets/styling/index.css" />
-    <title>
-      Halaman Belajar Mikrotik | SMK Al-Hadi
-    </title>
+    <title>Belajar Mikrotik - Landing Page | SMK Al-Hadi</title>
   </head>
   <body>
     <header>
@@ -59,6 +57,9 @@
               >Instagram</a
             >
           </li>
+          <button id="buat-guru">
+            Buat Guru
+          </button>
         </ul>
 
         <img
@@ -69,74 +70,126 @@
     </header>
 
     <main>
-      <div class="bagian-kiri">
-        <article class="selamat-datang">
-          <h1 class="title-selamat-datang">
-            Haloo!
-          </h1>
-          <p class="text-selamat-datang">
-            Di halaman ini kamu akan belajar
-            banyak hal mengenai mikrotik yang
-            cocok sebagai starting poin mu sebelum
-            praktik di Lab nantinya... Semangat
-          </p>
-        </article>
-      </div>
+      <article class="hero-section">
+        <div class="overlay"></div>
 
-      <div class="bagian-kanan">
-        <article class="basic" id="basic">
-          <div class="title-difficulty">
-            <h2 class="title">Basic</h2>
-            <h3>⁕</h3>
-          </div>
-          <p class="text">
-            Di section basic ini kamu akan belajar
-            hal-hal paling dasar dalam dunia
-            mikrotik, sudah siap nyebur? Gass!
+        <div class="hero-content">
+          <h1>Selamat Datang</h1>
+          <p>
+            Di website ini saya sebagai lulusan
+            SMK Al-Hadi membuat sesuatu yang dapat
+            teman-teman manfaatkan kedepannya
+            untuk belajar Mikrotik dari rumah, dan
+            saya jamin kalian akan lebih mudah
+            mengikuti praktek nantinya karena
+            sudah membaca materi-materi yang saya
+            sediakan disini... Semoga kalian suka
+            dengan cara penyajian materiku ini
+            ya🤩
           </p>
-        </article>
+        </div>
+      </article>
 
-        <article
-          class="intermediate"
-          id="intermediate">
-          <div class="title-difficulty">
-            <h2 class="title">intermediate</h2>
-            <h3>⁕⁕⁕</h3>
-          </div>
-          <p class="text">
-            Di section intermediate ini kamu akan
-            menyelam lebih dalam lagi di dunia
-            mikrotik. Sudah siap untuk naik level?
-            Ayo kita lanjut!
+      <article class="kenalan">
+        <div class="kiri">
+          <h2>Kenalan dulu yuk!!</h2>
+          <p>
+            Haloo temen-temen dari masa depan,
+            perkenalkan saya
+            <span>Pasha Raditya Putra</span> dari
+            kelas
+            <span>12 TJKT 2</span> (Setidaknya
+            saat web ini dibuat), saya membangun
+            website ini karena tiba-tiba
+            terpikir.<br />
+            <q
+              >Hmmm aku suka coding, mikrotik juga
+              bisa dibilang jago lah😁, bikin web
+              tentang mikrotik ah. </q
+            ><br />
+            saya tidak bermaksud untuk
+            menggantikan guru yang mengajari
+            mikrotik, saya hanya sebagai pemberi
+            bekal buat temen-temen aja biar siap
+            praktek sama bos-bos terakhir di lab
+            nanti.
           </p>
-        </article>
+        </div>
 
-        <article class="expert" id="expert">
-          <div class="title-difficulty">
-            <h2 class="title">Expert</h2>
-            <h2>⁕⁕⁕⁕⁕</h2>
-          </div>
-          <p class="text">
-            Selamat datang di expert. Sudah siap untuk
-            menghadapi tantangan terberat?
-          </p>
-        </article>
-      </div>
+        <div class="kanan">
+          <img
+            src="./assets/images/Lainnya/profile.webp"
+            alt="Foto saya" />
+        </div>
+      </article>
 
-      <article>
-        <h2>Penting!!</h2>
+      <article class="pembelajaran">
+        <h2>
+          Apa aja yang akan saya share buat
+          kalian?
+        </h2>
+        <ol>
+          <h3>Basic</h3>
+          <li>Topologi yang digunakan</li>
+          <li>Ganti nama Router Mikrotik</li>
+          <li>
+            Ganti nama port ethernet di Mikrotik
+          </li>
+          <li>
+            Buat IP Address sesuai dengan yang
+            diminta
+          </li>
+          <li>Meminta IP ISP ke DHCP Client</li>
+          <li>
+            Membuat DHCP Server untuk memberikan
+            IP pada client
+          </li>
+          <li>
+            Setting NAT agar Mikrotik memiliki
+            akses internet
+          </li>
+        </ol>
+
+        <ol>
+          <h3>Intermedate</h3>
+          <li>Membuat Wi-Fi</li>
+          <li>Blokir ping ke router</li>
+          <li>Blokir ping ke wireless</li>
+          <li>Penjadwalan internet</li>
+          <li>Logging</li>
+        </ol>
+
+        <ol>
+          <h3>Expert</h3>
+          <li>Hotspot</li>
+          <li>Blokir web pake DNS</li>
+          <li>Radius</li>
+        </ol>
+      </article>
+
+      <article class="buatGuru" id="pesan-buat-guru" hidden>
+        <h2>
+          Untuk Bapak & Ibu TJKT SMK Al-Hadi
+          Bandung
+        </h2>
         <p>
-          Setelah mendapatkan informasi dari web
-          ini, saya harap kalian tidak menjadi
-          seseorang yang merasa lebih dulu tahu
-          dari orang yang belum tahu. Jadi, jangan
-          sombong dan saya harap kalian di lab
-          harus tetap mengikuti apa kata guru.
-          Jangan karena sudah mengetahui suatu
-          informasi dari sini, kalian jadi tidak
-          mengikuti instruksi guru. Mohon
-          Kerjasamanya teman-teman.
+          Pak/Bu Pasha izin bikin website tentang
+          mikrotik ini, karena Pasha selalu pengen
+          ajarin adik kelas soal hal yang
+          kedepannya bakal mereka jalanin gitu,
+          cuman disini Pasha ngga ada maksud
+          mendahului apa yang Bapak/Ibu sampaikan
+          ke temen-temen, jadi pure ini Pasha
+          pengen bikin satu project yang jadi dan
+          terpakai dengan isi yang relevan di
+          Jurusan TJKT bu terutama kelas 12
         </p>
+      </article>
+
+      <article class="last">
+        <button id="belajar">
+          Selamat Belajar Guys!!!
+        </button>
       </article>
     </main>
 
