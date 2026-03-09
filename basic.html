@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="./assets/styling/basic.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/medium-zoom@1.1.0/dist/medium-zoom.min.css" />
+
+    <script src="https://unpkg.com/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <title>
+      Halaman Belajar Basic Mikrotik | SMK Al-Hadi
+    </title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="https://smkalhadi.sch.id/"
+          ><img
+            src="./assets/images/Lainnya/smkalhadi.webp"
+            alt="Logo SMK Al-Hadi"
+            width="50"
+            height="50"
+        /></a>
+      </div>
+
+      <nav class="profile">
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul id="nav-menu">
+          <li>
+            <a
+              href="https://www.dicoding.com/users/ashaardtp/academies"
+              >Profile Dicoding</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.github.com/ashaaardtp"
+              >Github</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/ashaardtp?igsh=Z2trZnlxaTRIY3Nn"
+              >Instagram</a
+            >
+          </li>
+          <button id="modul-button">Modul</button>
+        </ul>
+
+        <img
+          src="./assets/images/Lainnya/ucing.jpg"
+          alt="Foto Ucing"
+          class="foto-profile" />
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <h1>Selamat Datang Di Halaman Basic</h1>
+        <p>
+          Ayo mulai belajar, biasakan belajar
+          sesuai urutan ya, dari atas kebawah oke?
+          Biar gak ngangong kalau ada satu bahasan
+          soal modul sebelumnya.
+        </p>
+        <br />
+        <p>
+          Sebelum masuk ke modul, mikrotik tuh
+          sebenernya apa sih? Kenapa terdengar
+          sedikit menakutkan? Atau kamu tipe orang
+          yang "Alah gampang ini mah, gue mah
+          jago" kayak temen seangkatan aku, yang
+          orang bangka itu:D (Canda guys).
+        </p>
+        <div class="penjelasan-singkat">
+          <div class="apa-itu-mikrotik">
+            <h2>Apa sih Mikrotik itu?</h2>
+            <p>
+              Gampangnya, Mikrotik itu adalah
+              sebuah brand perangkat jaringan asal
+              Latvia yang bikin "otak" buat
+              router. Kalau HP punya Android atau
+              iOS, nah router itu punya RouterOS
+              (sistem operasinya Mikrotik).
+            </p>
+          </div>
+
+          <div class="menakutkan">
+            <h2>Kenapa Kesannya "Menakutkan"?</h2>
+            <p>
+              Mungkin karena kamu udah sering
+              denger kakel cerita atau ada yang
+              ngeluh mikrotik itu susah dan
+              istilah teknis (kayak IP Address,
+              DNS, Gateway). Tapi sebenernya,
+              kalau kamu udah paham polanya,
+              konfigurasi Mikrotik itu seru
+              banget, kayak lagi main puzzle!
+              Sekali jalan, rasanya puas banget.
+            </p>
+          </div>
+        </div>
+
+        <p class="kesimpulan">
+          Singkatnya, Mikrotik itu "otak" sakti
+          buat ngatur internet. Meskipun
+          tampilannya penuh angka yang bikin
+          pusing di awal, sebenernya dia asik
+          banget kalau udah kenal. Anggap aja lagi
+          belajar jadi expert di jaringan buatanmu
+          sendiri!
+        </p>
+      </article>
+
+      <article class="modul">
+        <section
+          class="section-satu submodul"
+          id="satu">
+          <button
+            class="buttons"
+            id="btn-dropdown">
+            Buka Sub-Modul
+          </button>
+          <div class="dropdown-content">
+            <p>
+              Pertama-tama kita akan membahas hal
+              paling dasar praktikum mikrotik,
+              sebelum kita menyelam untuk
+              konfigurasi menggunakan winbox, kita
+              perlu tahu topologi apa yang dipakai
+              saat kita praktik nanti.
+            </p>
+            <p>
+              Topologi yang digunakan yaitu
+              Point-to-point, apa itu
+              Point-to-point? Singkatnya
+              Point-to-point merupakan metode
+              koneksi yang menghubungkan dua
+              perangkat jaringan secara langsung,
+              artinya tidak akan ada percabangan.
+              Perhatikan gambar dibawah ini.
+            </p>
+
+            <img
+              src="./assets/images/Lainnya/Topologi.png"
+              alt="Topologi Point-to-point"
+              class="topologi-image zoom" />
+
+            <p>
+              Di gambar diatas, bisa dilihat bahwa
+              topologi yang digunakan tidak
+              terlalu kompleks, paling masalahnya
+              selalu sama yaitu kabel yang
+              tertukar antara Eth-1 dan Eth-2,
+              <span class="warning"
+                >Ingat ya temen-temen</span
+              >
+              jangan sampai tertukar karena nanti
+              akan ada orang lain yang terkena
+              akibat dari kesalahan kecil ini.
+            </p>
+            <div class="tips-container">
+              <blockquote class="tips">
+                Tips buat kalian, kalau kalian
+                baru ambil mikrotik dan kabel
+                straight dari kotak, kabel yang
+                kalian bawa itu, langsung colok ke
+                port Eth 2, kenapa? Karena Eth 1
+                buat Internet yang mana itu akan
+                dipasang setelah kalian cabut
+                kabel straight dari PC kalian, dan
+                dicolok ke Eth 1, lalu Eth 2 colok
+                ke PC, semoga terbayang ya.
+              </blockquote>
+            </div>
+            <br />
+            <p>
+              Kalau udah paham, gasin lanjut ke
+              sub-modul berikutnya.
+            </p>
+          </div>
+        </section>
+
+        <section
+          class="section-dua submodul"
+          id="dua">
+          <button
+            class="buttons"
+            id="btn-dropdown">
+            Buka Sub-Modul
+          </button>
+          <div class="dropdown-content">
+            <p>
+              Sudah saatnya kita meggunakan winbox
+              untuk memulai konfigurasi paling
+              awal yaitu adalah Reset, setelah
+              reset kita perlu mengganti nama
+              Router Mikrotik yang kita pakai agar
+              guru yang mengawas bisa mengenali
+              perangkat kita dengan mudah. Jika di
+              industri, mengubah nama akan sangat
+              penting karena akan mempermudah
+              identifikasi perangkat dan
+              pengelolaan jaringan secara
+              keseluruhan. Reset juga tidak kalah
+              penting, karena akan menghapus semua
+              konfigurasi sebelumnya.
+            </p>
+
+            <h3>Reset Configuration</h3>
+            <p>
+              Kita mulai dengan Reset,
+              langkah-langkahnya sangatlah mudah,
+              kalian tinggal cari menu:
+              <br /><span class="catatan"
+                >System > Reset Configuration > No
+                Default Configuration = YES >
+                Reset Configuration</span
+              >
+            </p>
+            <br />
+            <ol class="langkah-langkah">
+              <figure>
+                <li>
+                  <figcaption>
+                    Masuk ke tab System
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Ganti Nama Mikrotik & Reset/System.webp"
+                  alt="UI Mikrotik System"
+                  class="zoom" />
+              </figure>
+
+              <figure>
+                <li>
+                  <figcaption>
+                    Selanjutnya buka menu Reset
+                    Configuration
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Ganti Nama Mikrotik & Reset/Reset Configuration.png"
+                  alt="Ui Mikrotik Reset Configuraion"
+                  class="zoom" />
+              </figure>
+
+              <figure>
+                <li>
+                  <figcaption>
+                    Terakhir kamu bisa centang aja
+                    No Default Configuraion, lalu
+                    langsung tekan Reset
+                    Configuration
+                  </figcaption>
+                </li>
+                <img
+                  src="./assets/images/UI Mikrotik/Ganti Nama Mikrotik & Reset/Reset Configuration.png"
+                  alt="UI Mikrotik Reset"
+                  class="zoom" />
+              </figure>
+            </ol>
+            <br />
+
+            <h3>
+              Mengganti Identitas/Nama RouterBoard
+            </h3>
+            <p>
+              Setelah me-reset, otomatis semua
+              konfigurasi yang dilakukan
+              sebelumnya akan hilang, dan kita
+              harus menamai Mikrotik kita agar
+              guru mudah mengenalinya, misalnya
+              kalau ada keslahan topologi, guru
+              bisa tau siapa yang melakukan salah
+              jika Identity Router diganti, jadi
+              kalian bisa sorakin tuh orang yang
+              salahnya😁. Nggaa guys bercanda aja,
+              biasanya guru pasti langsung kasih
+              tau ke orang yang salah itu karena
+              nama Mikrotiknya sudah diubah, beda
+              cerita kalau belum diubah, selamat
+              mencari anomali...
+            </p>
+            <p>
+              Dibawah ini adalah catatan yang bisa
+              kalian tulis di buku sebelum aku
+              tampilkan gambar UI Winbox nya:
+              <span class="catatan"
+                >System > Identity > Ubah nama >
+                Apply > OK</span
+              >
+            </p>
+            <br />
+            <ol class="langkah-langkah">
+              <figure>
+                <li>
+                  <figcaption>
+                    Masuk ke tab System
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Ganti Nama Mikrotik & Reset/System.webp"
+                  alt="UI Mikrotik System"
+                  class="zoom" />
+              </figure>
+
+              <figure>
+                <li>
+                  <figcaption>
+                    Selanjutnya buka menu Identity
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Ganti Nama Mikrotik & Reset/Identity.png"
+                  alt="UI Mikrotik Identity"
+                  class="zoom" />
+              </figure>
+
+              <figure>
+                <li>
+                  <figcaption>
+                    Terakhir kamu bisa ubah nama
+                    RouterBoard kamu, lalu tekan
+                    Apply dan OK
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Ganti Nama Mikrotik & Reset/Ganti Nama.png"
+                  alt="UI Mikrotik Identity"
+                  class="zoom" />
+              </figure>
+            </ol>
+
+            <p>
+              Semua konfigurasi ini merupakan bare
+              minimum yang harus kalian lakukan.
+              Jadi inget-inget terus ya, tong poho
+              pokokna mah. Di sub-modul berikutnya
+              masih ubah ubah nama nih, penasaran
+              ubah nama apa? Gas aja lanjut.
+            </p>
+          </div>
+        </section>
+
+        <section
+          class="section-tiga submodul"
+          id="tiga">
+          <button
+            class="buttons"
+            id="btn-dropdown">
+            Buka Sub-Modul
+          </button>
+          <div class="dropdown-content">
+            <p>
+              Oke, setelah melakukan 2 konfigurasi
+              sebelumnya, sekarang kita masih
+              mengubah nama, tapi bukan nama
+              Routerboard, melainkan nama
+              interface, kenapa? Karena kalau kita
+              lihat di topologi, ada 2 interface
+              yang akan kita pakai yaitu Eth-1 dan
+              Eth-2, nah untuk mempermudah kita
+              dalam mengingat fungsi dari
+              masing-masing interface, kita bisa
+              ubah nama interface tersebut sesuai
+              dengan fungsinya, misalnya Eth-1
+              kita ubah menjadi Internet, karena
+              nanti akan kita colokkan kabel
+              straight dari modem ke port ini,
+              lalu Eth-2 kita ubah menjadi PC,
+              karena nanti akan kita colokkan
+              kabel straight dari PC ke port ini.
+            </p>
+            <p>
+              Langkahnya juga cukup mudah, ini
+              catatan yang bisa kalian tulis
+              dibuku:
+              <span class="catatan"
+                >Interfaces > Klik 2x di eth yang
+                namanya akan diubah > (Ubah nama
+                ether1 menjadi ether1-ISP /
+                Internet) > Apply > OK</span
+              >
+            </p>
+            <p>
+              Nah langkah ini bisa diulang ya,
+              karena kita juga mau ubah eth2
+              menjadi ether2-PC, jadi tinggal
+              ulangi aja langkahnya, tapi ganti
+              nama interface nya aja. Ada cara
+              cepetnya, bisa liat di gambar aja
+              ya.
+            </p>
+
+            <ol class="langkah-langkah">
+              <figure>
+                <li>
+                  <figcaption>
+                    Masuk ke tab Interfaces
+                    (Disini akan terlihat ada 2
+                    interface yang akan kita ubah
+                    namanya).
+                  </figcaption>
+                </li>
+                <img
+                  src="./assets/images/UI Mikrotik/Ganti Nama Interfaces/Interfaces.webp"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Setelah itu kamu bisa klik 2x
+                    di ether1.
+                  </figcaption>
+                </li>
+                <img
+                  src="./assets/images/UI Mikrotik/Ganti Nama Interfaces/Interfaces List.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Inilah tampilan ketika kamu
+                    klik 2x di ether1, begitu juga
+                    dengan ether2, nanti
+                    tampilannya akan sama seperti
+                    ini. cuman ganti angka 1 nya
+                    aja.
+                  </figcaption>
+                </li>
+                <img
+                  src="./assets/images/UI Mikrotik/Ganti Nama Interfaces/Eth 1.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Silahkan ubah kolom Name
+                    menjadi ether1-ISP atau
+                    Internet, lalu tekan Apply dan
+                    OK.
+                  </figcaption>
+                </li>
+                <img
+                  src="./assets/images/UI Mikrotik/Ganti Nama Interfaces/ISP.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Nah kalian bisa ulangi langkah
+                    sebelumnya, dan silahkan ganti
+                    ether2 menjadi ether2-LAN,
+                    lalu tekan Apply dan OK.
+                  </figcaption>
+                </li>
+                <img
+                  src="./assets/images/UI Mikrotik/Ganti Nama Interfaces/LAN.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+            </ol>
+
+            <p>
+              Jeng jeng, selesai! Mudah, kan?
+              Iyalah kan masih basic... Ngga
+              ketang, emang mudah kok temen temen,
+              semoga materi dari aku bisa
+              bermanfaat ya. Next..
+            </p>
+          </div>
+        </section>
+
+        <section
+          class="section-empat submodul"
+          id="empat">
+          <button
+            class="buttons"
+            id="btn-dropdown">
+            Buka Sub-Modul
+          </button>
+          <div class="dropdown-content">
+            <p>
+              Nah karena kita mulai masuk ke
+              konfigurasi yang sedikit lebih
+              susah, aku bakal kasih studi kasus.
+            </p>
+            <p>
+              Studi kasus: Kamu diperintahkan
+              untuk membuat jaringan komputer, ini
+              adalah detail alokasi yang harus
+              kamu input kedalam mikrotik:
+            </p>
+            <div class="studi-kasus">
+              <ol>
+                <li>
+                  <span
+                    >ether1-ISP = IP pemberian
+                    dari ISP</span
+                  >
+                </li>
+                <li>
+                  <span
+                    >ether2-LAN = 192.168.1.0/24
+                    dengan jumlah client 99</span
+                  >
+                </li>
+              </ol>
+            </div>
+
+            <p>
+              Mengikuti studi kasus diatas, akan
+              membuat kalian lebih mudah dalam
+              belajar. Ayo mulai konfigurasi.
+            </p>
+
+            <ol class="langkah-langkah">
+              <figure>
+                <li>
+                  <figcaption>
+                    Pertama tama kalian masuk ke
+                    tab IP yang ada di sisi kiri.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Bikin IP/IP.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Lalu klik Addresses, kalian
+                    gausah bingung kalau tab nya
+                    banyak kayak gini, soalnya ini
+                    udah berurutan sesuai dengan
+                    huruf awal, jadi kalau cari
+                    Addresses, pasti gak jauh dari
+                    yang paling atas.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Bikin IP/Addresses.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Lalu setelah muncul popup
+                    Addresses List, kalian bisa
+                    klik tombol + untuk membuat IP
+                    baru yang dipakai oleh ether2.
+                    Ingat yaa, ether2.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Bikin IP/Plus.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Lalu kalian bakal liat popup
+                    lain yang didalamnya ada 3
+                    kolom, dan 2 diantaranya kudu
+                    di isi. Bisa liat langsung
+                    gambar dibawah ini ya. Disini
+                    kita isi IP gateway ya, jangan
+                    IP network, karena IP network
+                    bakal ke isi otomatis. Jangan
+                    lupa juga prefix harus selalu
+                    ada ya.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Bikin IP/Ubah IP.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+
+                <p>
+                  Disini yang kita isi, udah pasti
+                  kolom Address, nah disini,
+                  sesuaikan dengan studi kasus ya,
+                  begitu juga saat latihan di LAB
+                  atau ujikom nanti, tetep
+                  perhatikan soal mengenai IP ini
+                  oke? Satu lagi, ingat apa? Yap
+                  interfaces ya ubah ke
+                  ether2-LAN, karena disini kita
+                  bikin IP buat PC kita.
+                </p>
+              </figure>
+
+              <figure>
+                <li>
+                  <figcaption>
+                    Asik, kalian udah selangkah
+                    lebih maju nih dalam
+                    konfigurasi, selamat ya, ini
+                    hasil dari konfigurasi diatas,
+                    ingatnya nama interface dan IP
+                    address bisa aja beda,
+                    tergantung soal. dan nama
+                    interface itu gak harus diubah
+                    pun tidak apa apa, tapi kalau
+                    diubah juga ga ada salahnya,
+                    atau kalian mau ubah jadi
+                    ether2-PC pun aman aman aja.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Bikin IP/Hasil.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+            </ol>
+
+            <br />
+            <p>
+              Gimana sejauh ini? Masih mudah lah
+              ya, kalau masih bingung gapapa, buka
+              lagi aja modulnya kapanpun
+              dimanapun, sambil di lab pun boleh..
+              Harusnya:v <br /><br />Lanjut.
+            </p>
+          </div>
+        </section>
+
+        <section
+          class="section-lima submodul"
+          id="lima">
+          <button
+            class="buttons"
+            id="btn-dropdown">
+            Buka Sub-Modul
+          </button>
+          <div class="dropdown-content">
+            <p>
+              Okee, setelah bikin IP untuk ether2,
+              sekarang kita bakal minta IP untuk
+              ether1-ISP, nah kenapa judulnya
+              minta IP? Karena dengan minta IP
+              langsung ke ISP, kita udah dapet
+              konfigurasi secara otomatis, jadi
+              gak perlu manual. Gimana caranya?
+              Lihat gambar dibawah.
+            </p>
+
+            <ol class="langkah-langkah">
+              <figure>
+                <li>
+                  <figcaption>
+                    Silahkan klik menu IP lagi,
+                    dan cari DHCP Client.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Minta IP/IP.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Kalau udah nemu, klik DHCP
+                    Client nya.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Minta IP/DHCP Client.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Setelah itu muncul popup,
+                    disini kita cuman perlu
+                    melakukan sedikit konfigurasi,
+                    dan mudah. Klik tombol add/+.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Minta IP/Plus.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Setelah itu, akan muncul popup
+                    lagi, kita cuman perlu
+                    memastikan kolom interface itu
+                    udah diisi ether1-ISP,
+                    biasanya otomatis udah terisi,
+                    kalau belum, silahkan pilih
+                    ether1-ISP. Lalu Apply > OK.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Minta IP/New DHCP.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    UDAH, selesai... Mudah kan?
+                    Yap ini konfigurasi yang
+                    menurutku paling dikit dan
+                    emang mudah, asalkan teliti
+                    aja, ada satuhal yang perlu
+                    kalian cek, yaitu status,
+                    kalau sudah bound, berarti
+                    aman, dan bisa dilihat kalau
+                    IP address akan otomatis
+                    dikasih. Ini beda beda ya,
+                    kalau di lab tuh biasanya
+                    200.200.200.0
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Minta IP/Hasil.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+            </ol>
+
+            <p>
+              Kalian juga bisa cek di Addresses,
+              bakal muncul 1 IP yang udah kita
+              dapetin dari ISP, tinggal 2
+              Sub-modul lagi nih. Jom!
+            </p>
+          </div>
+        </section>
+
+        <section
+          class="section-enam submodul"
+          id="enam">
+          <button
+            class="buttons"
+            id="btn-dropdown">
+            Buka Sub-Modul
+          </button>
+          <div class="dropdown-content">
+            <p>
+              Setelah kita bikin IP buat
+              ether2-LAN, ayo kita pakai DHCP
+              Server untuk memberikan IP secara
+              otomatis ke PC yang terhubung ke
+              ether2-LAN.
+            </p>
+            <p>
+              Ini cukup panjang jadi selamat
+              mengikuti langkah-langkahnya ya!
+            </p>
+
+            <ol class="langkah-langkah">
+              <figure>
+                <li>
+                  <figcaption>
+                    Klik menu IP, konfigurasi
+                    modul Basic ini cukup banyak
+                    kita akan mengakses menu IP
+                    ini, jadi jangan bosan ya..
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/DHCP Server/IP.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Setelah itu cari menu DHCP
+                    Server.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/DHCP Server/DHCP Server.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Lanjut kita klik DHCP Setup di
+                    popup yang muncul.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/DHCP Server/DHCP Setup.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Setelah muncul popup, di popup
+                    ini kita hanya perlu
+                    memastikan 2 hal, yaitu
+                    interface harus ether2-LAN,
+                    dan Address to Give Out nya
+                    sesuaikan dengan jumlah client
+                    yang diminta. Di studi kasus
+                    sebelumnya, jumlah client yang
+                    diminta adalah 99. Pertama
+                    tama, pastikan interface nya
+                    sudah benar, yaitu ether2-LAN.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/DHCP Server/DHCP Server Interface.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Beres pilih interface, kalian
+                    klik Next 3x, sampai muncul
+                    kolom Address to Give Out.
+                    Disini muncul
+                    192.168.1.2-192.168.1.254
+                    karena prefix yang digunakan
+                    itu /24, ubah 254 menjadi 100,
+                    kenapa? Karena jumlah client
+                    yang diminta adalah 99, cara
+                    hitung nya IP awal (Didalam
+                    studi kasus ini adalah 2) +
+                    Jumlah client - 1. Jadinya
+                    begini 2 + 99 - 1 = 100.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/DHCP Server/Addresses to Give Out.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Kalau udah isi Address to Give
+                    Out, kalian tinggal klik 3x
+                    lagi sampai muncul popup Setup
+                    has completed successfully.
+                    Setelah itu klik OK. Dan
+                    Taraa!! Beress.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/DHCP Server/Hasil.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+            </ol>
+          </div>
+        </section>
+
+        <section
+          class="section-tujuh submodul"
+          id="tujuh">
+          <button
+            class="buttons"
+            id="btn-dropdown">
+            Buka Sub-Modul
+          </button>
+          <div class="dropdown-content">
+            <p>
+              Sub-modul terakhir, yah gak kerasa
+              ya udah di akhir aja, jangan
+              berkecil hati, karena kalian bisa
+              lanjut ke Modul Intermediate nanti
+              ya.
+            </p>
+
+            <p>
+              Di konfigurasi kali ini kita akan
+              membuat mikrotik kita memiliki akses
+              internet, YES sedari awal mikrotik
+              kalian tuh cuman kotak putih biasa
+              yang cuman bisa setting IP tapi
+              gabisa memberikan akses internet,
+              sampaiii kalian konfigurasi bagian
+              ini.
+            </p>
+
+            <p>
+              Simak langkah-langkahnya dibawah ini
+              yaa.
+            </p>
+            <ol class="langkah-langkah">
+              <figure>
+                <li>
+                  <figcaption>
+                    Lagi lagi kalian klik menu IP,
+                    dan cari Firewall
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Firewall/IP.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Langsung klik menu FIrewall
+                    dan disini kita akan melakukan
+                    sebuah sihir.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Firewall/Firewall.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Di popup Firewall kalian akses
+                    menu NAT yang ada disebelah
+                    kanan FIlter Rules. Dan
+                    langsung klik tombol Add.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Firewall/NAT & Plus.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Di popup NAT di tab General
+                    kalian isi 2 hal ini:
+                    <span class="catatan"
+                      >Chain: srcnat <br />
+                      Out. Interfaces:
+                      ether1-ISP.</span
+                    >
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Firewall/General.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+              <figure>
+                <li>
+                  <figcaption>
+                    Next kita akses tab Action,
+                    dan yang diubah disini adalah
+                    Action itu sendiri, cari
+                    masquerade. Nah kalau kalian
+                    bingung ingat ingat namanya,
+                    inget aja nama nyamuk dalam
+                    bahasa inggris, mosquito.
+                    Kurleb sama lah ya.
+                  </figcaption>
+                </li>
+
+                <img
+                  src="./assets/images/UI Mikrotik/Firewall/Action.png"
+                  alt="UI Mikrotik Interface"
+                  class="zoom" />
+              </figure>
+            </ol>
+          </div>
+        </section>
+        <section class="submodul">
+          <p>
+            Well, selesai sudah pembelajaran di
+            halaman Basic ini, silahkan akses
+            halaman selanjutnya untuk mempelajari
+            hal-hal yang lebih menarik.
+          </p>
+          <button class="buttons" id="goToIntermediate">
+            Intermediate
+          </button>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <div>
+        <p>
+          Crafted with Fuiyoh! energy by Uncle. P
+          | 2026 Februari &copy;
+        </p>
+      </div>
+    </footer>
+    <script src="./assets/js/basic.js"></script>
+  </body>
+</html>

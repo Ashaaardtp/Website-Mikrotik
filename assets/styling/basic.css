@@ -1,0 +1,448 @@
+:root {
+  --primary-color: #1e3a8a;
+  --secondary-color: #3b82f6;
+  --accent-color: #f59e0b;
+  --background-light: #f8fafc;
+  --text-dark: #0f172a;
+  --text-white: #ffffff;
+  --hero-overlay: rgba(30, 58, 138, 0.7);
+  --card-bg: rgba(30, 58, 138, 0.85);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
+  --smooth-transition: all 0.2s ease;
+  --snappy-transition: all 0.4s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  background-color: var(--text-white);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  cursor: pointer;
+  border: none;
+  z-index: 100;
+}
+
+.hamburger span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: var(--smooth-transition);
+}
+
+header .profile,
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style-type: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: 700;
+  transition: var(--smooth-transition);
+}
+
+nav ul li a:hover {
+  color: var(--secondary-color);
+}
+
+nav ul button {
+  background-color: var(--accent-color);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: var(--smooth-transition);
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+nav ul button:hover {
+  transform: scale(1.1);
+}
+
+nav ul button:active {
+  transform: scale(1);
+}
+
+nav .foto-profile {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+}
+
+button {
+  font-family: "Jost", sans-serif;
+}
+
+header .profile #isi-kode.mulai {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  transform: scale(1);
+  transition: var(--smooth-transition);
+  pointer-events: auto;
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+article,
+.submodul {
+  margin-inline: 1.5rem;
+  margin-block: 3rem;
+  padding: 1rem;
+  box-shadow: var(--shadow-md);
+  font-size: 1.2rem;
+  transition: var(--snappy-transition);
+  overflow: hidden;
+  background-color: white;
+}
+
+.modul {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+}
+
+.penjelasan-singkat {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+article .apa-itu-mikrotik,
+article .menakutkan {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem;
+  background-color: var(--secondary-color);
+  padding: 1.2rem;
+  color: var(--text-white);
+  box-shadow: var(--shadow-sm);
+  flex: 1;
+}
+
+article .submodul h2 {
+  text-shadow: 1px 1px 4px rgba(122, 29, 184, 0.4);
+  color: var(--secondary-color);
+}
+
+.buttons {
+  padding: 6px 12px;
+  border: none;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  color: var(--text-white);
+  font-weight: bold;
+  border-radius: 10px;
+  transition: var(--smooth-transition);
+}
+
+.buttons:hover {
+  background-color: #cf880c;
+  transform: scale(1.05);
+}
+.buttons:active {
+  transform: scale(1);
+}
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.popup-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popupModul {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.popup-overlay.show .popup-box {
+  transform: scale(1);
+}
+
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--smooth-transition);
+  padding: 0 1rem;
+}
+
+.dropdown-content.active {
+  max-height: fit-content;
+  padding: 1rem;
+}
+
+.dropdown-content ul {
+  padding-left: 0;
+}
+
+.dropdown-content ul li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.section-satu .warning {
+  color: red;
+  font-weight: bold;
+}
+
+.section-satu .warning::before {
+  content: "⚠️ ";
+}
+
+.section-satu .tips-container {
+  margin-top: 1.2rem;
+}
+
+.section-satu .tips {
+  font-weight: bold;
+  color: var(--accent-color);
+  border-left: 2px solid green;
+  padding-left: 1rem;
+}
+
+.tips::before {
+  content: '"';
+}
+
+.tips::after {
+  content: '"';
+}
+
+.catatan {
+  font-family: "Courier New", Courier, monospace;
+  background-color: gray;
+  font-weight: bold;
+  color: var(--text-white);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+figure img {
+  margin-bottom: 12px;
+  width: 50%;
+}
+
+.langkah-langkah li {
+  font-size: 1.2rem;
+  list-style-type: decimal;
+  margin-left: 2rem;
+  margin-bottom: 6px;
+}
+
+.studi-kasus {
+  background-color: var(--accent-color);
+  color: var(--text-white);
+  font-weight: bold;
+  padding: 0.5rem 0.5rem;
+  margin-block: 1.2rem;
+}
+
+.studi-kasus ol li {
+  list-style-type: decimal;
+  margin-left: 2rem;
+  margin-bottom: 6px;
+}
+
+.daftar-modul {
+  text-align: left;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  margin-bottom: 6px;
+  text-decoration: none;
+}
+
+.daftar-modul li {
+  list-style-type: decimal;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: var(--text-dark);
+  transition: var(--smooth-transition);
+}
+
+.daftar-modul li a {
+  list-style: decimal;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.daftar-modul li:hover {
+  text-decoration: underline;
+  transform: scale(1.02);
+}
+
+.daftar-modul li:active {
+  transform: scale(1);
+}
+
+/* Gambar */
+.zoom {
+  z-index: 9999;
+}
+
+/* Medium zoom library styling, jadi ini munculin overlay, overlay itu background yang jadi agak gelap waktu suatu gambar di klik */
+.mz-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.72);
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.mz-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Close button untuk image zoom */
+.mz-close-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--text-white);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 2002;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: var(--smooth-transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mz-close-btn.show {
+  display: flex;
+}
+
+.mz-close-btn:hover {
+  background-color: #cf880c;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.mz-close-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1rem;
+  }
+  .hamburger {
+    display: flex;
+  }
+  header .profile ul {
+    position: absolute;
+    top: 0;
+    left: -110%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--text-white);
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+    box-shadow: -5px 0 16px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    transition: var(--smooth-transition);
+  }
+  header .profile ul.active {
+    left: 0;
+    top: 0;
+    font-size: 1rem;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    transform: scale(0);
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .penjelasan-singkat {
+    flex-direction: column;
+  }
+
+  /* Gambar di layar kecil */
+  .zoom {
+    width: 100%;
+  }
+}
