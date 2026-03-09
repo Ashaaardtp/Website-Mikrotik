@@ -130,19 +130,14 @@ footer {
 
 article,
 .submodul {
-  margin-inline: 1.5rem;
-  margin-block: 3rem;
+  margin-inline: 1.1rem;
+  margin-block: 2rem;
   padding: 1rem;
   box-shadow: var(--shadow-md);
   font-size: 1.2rem;
   transition: var(--snappy-transition);
   overflow: hidden;
   background-color: white;
-}
-
-.modul {
-  background-color: var(--card-bg);
-  border-radius: 20px;
 }
 
 .penjelasan-singkat {
@@ -234,7 +229,7 @@ article .submodul h2 {
 
 .dropdown-content.active {
   max-height: fit-content;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .dropdown-content ul {
