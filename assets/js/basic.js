@@ -174,60 +174,85 @@ document.addEventListener(
   },
 );
 
-const mz = mediumZoom(".zoom", {
-  margin: 20,
-  background: "rgba(0,0,0,0)",
-  scrollOffset: 9999,
-});
-
-const mzOverlay = document.createElement("div");
-mzOverlay.className = "mz-overlay";
-document.body.appendChild(mzOverlay);
-
-const closeButton =
-  document.createElement("button");
-closeButton.className = "mz-close-btn";
-closeButton.innerHTML = "✕";
-closeButton.title = "Tutup (Esc)";
-document.body.appendChild(closeButton);
-
-mz.on("open", () => {
-  mzOverlay.classList.add("show");
-  closeButton.classList.add("show");
-  document.body.style.overflow = "hidden";
-  const opened = document.querySelector(
-    ".medium-zoom-image--opened",
-  );
-  if (opened) {
-    opened.style.zIndex = 2001;
-  }
-});
-
-mz.on("close", () => {
-  mzOverlay.classList.remove("show");
-  closeButton.classList.remove("show");
-  document.body.style.overflow = "";
-  const opened = document.querySelector(
-    ".medium-zoom-image--opened",
-  );
-  if (opened) {
-    opened.style.zIndex = "";
-  }
-});
-
-closeButton.addEventListener("click", () =>
-  mz.close(),
-);
-
-mzOverlay.addEventListener("click", () =>
-  mz.close(),
-);
-
-document.addEventListener("keydown", (event) => {
-  if (
-    event.key === "Escape" &&
-    closeButton.classList.contains("show")
-  ) {
-    mz.close();
+// Initialize ViewerJS for image viewing
+document.addEventListener("DOMContentLoaded", function() {
+  // Find all images with zoom class and wrap them in a container
+  const zoomImages = document.querySelectorAll(".zoom");
+  
+  if (zoomImages.length > 0) {
+    // Create a container to hold all images for gallery view
+    const galleryContainer = document.createElement("div");
+    galleryContainer.id = "image-gallery";
+    galleryContainer.style.display = "none"; // Hidden container for ViewerJS
+    
+    // Clone all zoom images to the container
+    zoomImages.forEach(function(img, index) {
+      const clonedImg = img.cloneNode(true);
+      clonedImg.removeAttribute("onclick");
+      galleryContainer.appendChild(clonedImg);
+    });
+    
+    document.body.appendChild(galleryContainer);
+    
+    // Initialize Viewer on the container
+    const gallery = new Viewer(galleryContainer, {
+      inline: false,
+      button: true,
+      navbar: true,
+      title: true,
+      toolbar: {
+        zoomIn: true,
+        zoomOut: true,
+        oneToOne: true,
+        reset: true,
+        prev: {
+          show: true,
+          size: "large",
+        },
+        play: {
+          show: true,
+          size: "large",
+        },
+        next: {
+          show: true,
+          size: "large",
+        },
+        rotateLeft: true,
+        rotateRight: true,
+        flipHorizontal: true,
+        flipVertical: true,
+      },
+      title: function(imageElement) {
+        return imageElement.alt || "Gambar";
+      },
+      tooltip: true,
+      movable: true,
+      zoomable: true,
+      rotatable: true,
+      scalable: true,
+      transition: true,
+      fullscreen: true,
+      keyboard: true,
+      loading: true,
+      loop: true,
+      minZoomRatio: 0.5,
+      maxZoomRatio: 4,
+      zIndex: 9999,
+      zIndexInline: 9999,
+      // When clicking original image, open the viewer
+      url: function(imageElement) {
+        return imageElement.src;
+      },
+    });
+    
+    // Add click event to original images to open gallery
+    zoomImages.forEach(function(img, index) {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", function(e) {
+        e.preventDefault();
+        // Show the corresponding image in the gallery
+        gallery.view(index);
+      });
+    });
   }
 });

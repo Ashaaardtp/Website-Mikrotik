@@ -339,60 +339,12 @@ figure img {
 
 /* Gambar */
 .zoom {
-  z-index: 9999;
-}
-
-/* Medium zoom library styling, jadi ini munculin overlay, overlay itu background yang jadi agak gelap waktu suatu gambar di klik */
-.mz-overlay {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.72);
-  z-index: 2000;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  pointer-events: none;
-}
-
-.mz-overlay.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* Close button untuk image zoom */
-.mz-close-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  border: none;
-  color: var(--text-white);
-  font-size: 28px;
   cursor: pointer;
-  z-index: 2002;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  transition: var(--smooth-transition);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
 }
 
-.mz-close-btn.show {
-  display: flex;
-}
-
-.mz-close-btn:hover {
-  background-color: #cf880c;
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-.mz-close-btn:active {
-  transform: scale(0.95);
+.zoom:hover {
+  transform: scale(1.02);
 }
 
 @media (max-width: 768px) {
