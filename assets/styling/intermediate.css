@@ -128,11 +128,189 @@ article {
   background-color: white;
 }
 
+article,
+.submodul {
+  margin-inline: 1.1rem;
+  margin-block: 2rem;
+  padding: 1rem;
+  box-shadow: var(--shadow-md);
+  font-size: 1.2rem;
+  transition: var(--snappy-transition);
+  overflow: hidden;
+  background-color: white;
+}
+
+article .submodul h2 {
+  text-shadow: 1px 1px 4px rgba(122, 29, 184, 0.4);
+  color: var(--secondary-color);
+}
+
+.buttons {
+  padding: 6px 12px;
+  border: none;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  color: var(--text-white);
+  font-weight: bold;
+  border-radius: 10px;
+  transition: var(--smooth-transition);
+}
+
+.buttons:hover {
+  background-color: #cf880c;
+  transform: scale(1.05);
+}
+.buttons:active {
+  transform: scale(1);
+}
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.popup-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popupModul {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.popup-overlay.show .popup-box {
+  transform: scale(1);
+}
+
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--smooth-transition);
+  padding: 0 1rem;
+}
+
+.dropdown-content.active {
+  max-height: fit-content;
+  padding: 0.5rem;
+}
+
+.dropdown-content ul {
+  padding-left: 0;
+}
+
+.dropdown-content ul li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.langkah-langkah li {
+  font-size: 1.2rem;
+  list-style-type: decimal;
+  margin-left: 2rem;
+  margin-bottom: 6px;
+}
+
+.studi-kasus {
+  background-color: var(--accent-color);
+  color: var(--text-white);
+  font-weight: bold;
+  padding: 0.5rem 0.5rem;
+  margin-block: 1.2rem;
+}
+
+.studi-kasus ol li {
+  list-style-type: decimal;
+  margin-left: 2rem;
+  margin-bottom: 6px;
+}
+
+.daftar-modul {
+  text-align: left;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  margin-bottom: 6px;
+  text-decoration: none;
+}
+
+.daftar-modul li {
+  list-style-type: decimal;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: var(--text-dark);
+  transition: var(--smooth-transition);
+}
+
+.daftar-modul li a {
+  list-style: decimal;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.daftar-modul li:hover {
+  text-decoration: underline;
+  transform: scale(1.02);
+}
+
+.daftar-modul li:active {
+  transform: scale(1);
+}
+
+.zoom {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.zoom:hover {
+  transform: scale(1.02);
+}
+
+figure img {
+  margin-bottom: 12px;
+  width: 100%;
+}
+
 footer {
   margin-top: 2rem;
   text-align: center;
   padding: 1rem;
   font-weight: 500;
+}
+
+.studi-kasus {
+  background-color: var(--accent-color);
+  color: var(--text-white);
+  font-weight: bold;
+  padding: 0.5rem 0.5rem;
+  margin-block: 1.2rem;
+}
+
+.studi-kasus ol li {
+  list-style-type: disc;
+  margin-left: 2rem;
+  margin-bottom: 6px;
+}
+
+.bulet li {
+  list-style-type: disc;
 }
 
 @media (max-width: 768px) {

@@ -17,9 +17,16 @@
       rel="stylesheet" />
     <link
       rel="stylesheet"
+      href="https://unpkg.com/viewerjs@1.11.6/dist/viewer.min.css" />
+
+    <script src="https://unpkg.com/viewerjs@1.11.6/dist/viewer.min.js"></script>
+
+    <link
+      rel="stylesheet"
       href="./assets/styling/intermediate.css" />
     <title>
-      Halaman Belajar Mikrotik | SMK Al-Hadi
+      Halaman Belajar Intermediate Mikrotik | SMK
+      Al-Hadi
     </title>
   </head>
   <body>
@@ -59,6 +66,7 @@
               >Instagram</a
             >
           </li>
+          <button id="modul-button">Modul</button>
         </ul>
 
         <img
@@ -133,7 +141,282 @@
           enterprise besar biasanya digunakan
           vendor kelas high-end lainnya.
         </p>
+        <br />
+        <p class="disclaimer">
+          Sebelum lanjut ke materi, aku ingin
+          bilang sesuatu, disini aku melakukan
+          konfigurasi Mikrotik dengan menggunakan
+          VirtualBox sebagai routerboard, emang
+          bisa? Bisa.. Tapi minusnya ya menurutku
+          perlu penyesuaian lagi sih, dan port
+          wifi, gak ada disini, kecuali kita pakai
+          router fisik. Jadi saya mohon maaf jika
+          ini mungkin agak bingung karena gambar
+          nya beberapa bakal ku cari dulu. Heheh..
+        </p>
       </article>
+
+      <section
+        class="section-satu submodul"
+        id="satu">
+        <button class="buttons" id="btn-dropdown">
+          Buka Sub-Modul
+        </button>
+        <div class="dropdown-content">
+          <p>
+            Oke, level up! Masa iya hari gini
+            internetan masih pakai kabel terus?
+            Laptop ada, HP ada, tapi kalau mau
+            konek harus cari colokan LAN kan asa
+            kumaha kitu. Nahh di sub-modul ini,
+            kita bakal bikin Mikrotik kamu jadi
+            'pemancar' sinyal Wi-Fi. Biar kamu
+            bisa rebahan sambil tetap scrolling
+            pakai jaringan buatan sendiri!
+          </p>
+
+          <p>
+            Membangun jaringan nirkabel (Wireless)
+            di Mikrotik itu lebih dari sekadar
+            "biar HP bisa konek". Di sini kita
+            belajar bagaimana mengelola frekuensi
+            dan keamanan agar sinyal tidak saling
+            bertabrakan dengan tetangga. Kamu
+            bakal mengatur SSID (nama Wi-Fi) dan
+            menentukan security profile supaya
+            nggak sembarang orang bisa numpang
+            YouTube-an gratis pakai jaringamu.
+            Ingat, jaringan yang bagus bukan cuma
+            yang kenceng, tapi yang aman dan
+            stabil. Penasaran gimana cara mancarin
+            sinyalnya? Yuk, intip langkah-langkah
+            konfigurasinya di bawah ini!
+          </p>
+
+          <ol class="langkah-langkah">
+            <figure>
+              <li>
+                <figcaption>
+                  <p>
+                    Pertama, kalian buat IP untuk wlan1
+                    di menu IP > Addresses. Lalu klik Add dan ganti interface ke wlan1, dan langung isi address yang sesuai dengan soal, atau aku akan kasih studi kasus lagi.
+                  </p>
+                  <div class="studi-kasus">
+                    <ol>
+                      <li>
+                        <span
+                          >wlan1- = 192.168.10.0/24 - Dengan jumlah client 19</span
+                        >
+                      </li>
+                    </ol>
+                  </div>
+                </figcaption>
+              </li>
+
+              <img
+                src=""
+                alt="Sabar ya, saya lagi cari gambar UI nya."
+                class="zoom" />
+            </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  <p>
+                    Setelah bikin IP untuk wlan1, masuk ke menu
+                    Wireless.
+                  </p>
+                </figcaption>
+              </li>
+
+              <img
+                src="./assets/images/UI Mikrotik/Konfigurasi Wireless/Wireless.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+            <figure>
+              <li>
+                <figcaption>
+                  <p>
+                    Lalu kalian klik 2x di wlan1.
+                    Dan akan muncul popup.
+                  </p>
+                </figcaption>
+              </li>
+
+              <img
+                src=""
+                alt="Sabar ya, saya lagi cari gambar UI nya."
+                class="zoom" />
+            </figure>
+            <figure>
+              <li>
+                <figcaption>
+                  <p>
+                    DI popup, di tab wireless, ada
+                    dua hal yang harus
+                    dikonfigurasi.
+                  </p>
+                  <ol
+                    class="langkah-langkah bulet">
+                    <li>
+                      Ubah mode menjadi: AP Bridge
+                    </li>
+                    <li>
+                      Ubah SSID dengan nama
+                      kalian, atau sesuai soal.
+                    </li>
+                  </ol>
+                  <p>
+                    Kemudian klik tombol Apply >
+                    OK.
+                  </p>
+                </figcaption>
+              </li>
+
+              <img
+                src=""
+                alt="Sabar ya, saya lagi cari gambar UI nya."
+                class="zoom" />
+            </figure>
+            <figure>
+              <li>
+                <figcaption>
+                  <p>
+                    Setelah itu kita bakal
+                    menambahkan password ke wifi
+                    kita, masuk ke tab security
+                    profile. Nah disini ada dua
+                    pilihan, kalian bisa add, atau
+                    pilih yang default. Kalau aku
+                    seringnya default karena
+                    gausah balik lagi setting
+                    wireless nya, tapi kalau
+                    kebutuhan soal harus bikin
+                    baru, ya ikutin apa soal,
+                    nanti aku jelasin gimana
+                    caranya kalau kalian bikin
+                    baru. <br />
+                    Klik 2x di default.
+                  </p>
+                </figcaption>
+              </li>
+
+              <img
+                src="./assets/images/UI Mikrotik/Konfigurasi Wireless/Security Profiles.png"
+                alt="UI Mikrottik."
+                class="zoom" />
+            </figure>
+            <figure>
+              <li>
+                <figcaption>
+                  <p>
+                    Oke setelah itu kita bisa
+                    mengatur beberapa hal disini,
+                    karena kita akan menambahkan
+                    password ke wifi kita. Maka
+                    dari itu kita tambahkan 2 mode
+                    yaitu WPA PSK dan WPA2 PSK.
+                    Ini untuk keamanan yang lebih
+                    bagus, jadi kita ceklis
+                    keduanya. <br />
+                    Lanjut, kalian bikin
+                    passwordnya sesuai apa yang
+                    kalian mau, atau sesuai soal.
+                    Kalau kalian bingung karena
+                    passwordnya di hide, kalian
+                    bisa ikutin langkah
+                    selanjutnya, ini optional tapi
+                    mungkin akan membantu kalian.
+                  </p>
+                </figcaption>
+              </li>
+
+              <img
+                src="./assets/images/UI Mikrotik/Konfigurasi Wireless/Konfigurasi Security Profiles.png"
+                alt="UI Mikrotik."
+                class="zoom" />
+            </figure>
+            <figure>
+              <li>
+                <figcaption>
+                  <p>
+                    Kalian bisa ilangin ceklis di
+                    kolom Hide Password, dan
+                    kalian bisa langsung lihat
+                    password yang kalian bikin.
+                  </p>
+                </figcaption>
+              </li>
+
+              <img
+                src="./assets/images/UI Mikrotik/Konfigurasi Wireless/Setting.png"
+                alt="UI Mikrotik."
+                class="zoom" />
+            </figure>
+            <figure>
+              <li>
+                <figcaption>
+                  <p>
+                    Oke disini aku bakal ajarin
+                    gimana jika kita gak pake
+                    default di security profile,
+                    mudah aja. Kalian klik 2x
+                    wlan1, terus cari kolom
+                    security profile, dan ubah
+                    yang awalnya default menjadi
+                    nama yang kalian bikin untuk
+                    security profilenya.
+                  </p>
+                </figcaption>
+              </li>
+
+              <img
+                src=""
+                alt="Sabar ya, saya lagi cari gambar UI nya."
+                class="zoom" />
+            </figure>
+          </ol>
+
+          <p>
+            Mantap! selamat kalian udah membuat
+            Wi-Fi menggunakan Mikrotik. Gas lanjut
+            ke submodul berikutnya.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="section-satu submodul"
+        id="satu">
+        <button class="buttons" id="btn-dropdown">
+          Buka Sub-Modul
+        </button>
+      </section>
+
+      <section
+        class="section-satu submodul"
+        id="satu">
+        <button class="buttons" id="btn-dropdown">
+          Buka Sub-Modul
+        </button>
+      </section>
+
+      <section
+        class="section-satu submodul"
+        id="satu">
+        <button class="buttons" id="btn-dropdown">
+          Buka Sub-Modul
+        </button>
+      </section>
+
+      <section
+        class="section-satu submodul"
+        id="satu">
+        <button class="buttons" id="btn-dropdown">
+          Buka Sub-Modul
+        </button>
+      </section>
     </main>
 
     <footer>
