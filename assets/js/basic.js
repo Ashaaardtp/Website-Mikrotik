@@ -175,7 +175,7 @@ document.addEventListener(
 );
 
 const mz = mediumZoom(".zoom", {
-  margin: 50,
+  margin: 20,
   background: "rgba(0,0,0,0)",
   scrollOffset: 9999,
 });
