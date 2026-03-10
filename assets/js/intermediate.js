@@ -51,14 +51,12 @@ btnModul.addEventListener("click", function () {
   const popupModul =
     document.createElement("div");
   const popupLink = `<ol class="daftar-modul">
-      <h3>Basic</h3>
-      <li><a href="#satu">Topologi yang digunakan</a></li> 
-      <li><a href="#dua">Ganti nama Router Mikrotik</a></li>
-      <li><a href="#tiga">Ganti nama port ethernet di Mikrotik</a></li>
-      <li><a href="#empat">Buat IP Address sesuai dengan yang diminta</a></li>
-      <li><a href="#lima">Meminta IP ISP ke DHCP Client</a></li>
-      <li><a href="#enam">Membuat DHCP Server untuk memberikan IP pada client</a></li> 
-      <li><a href="#tujuh">Setting NAT agar Mikrotik memiliki akses internet</a></li>
+      <h3>Intermediate</h3>
+      <li><a href="#satu">Membuat Wi-Fi</a></li> 
+      <li><a href="#dua">Blokir ping ke router</a></li>
+      <li><a href="#tiga">Blokir ping ke wireless</a></li>
+      <li><a href="#empat">Penjadwalan internet</a></li>
+      <li><a href="#lima">Logging</a></li>
       </ol>
       <button id="tutupPopup" class="buttons">Tutup</button>`;
   overlay.className = "popup-overlay";

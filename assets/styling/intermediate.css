@@ -208,6 +208,11 @@ article .submodul h2 {
   padding: 0 1rem;
 }
 
+.dropdown-content p {
+  margin-bottom: 8px;
+  text-align: justify;
+}
+
 .dropdown-content.active {
   max-height: fit-content;
   padding: 0.5rem;
@@ -285,7 +290,19 @@ article .submodul h2 {
 
 figure img {
   margin-bottom: 12px;
-  width: 100%;
+  min-width: 50%;
+  max-width: 80%;
+}
+
+figure {
+  margin-bottom: 8px;
+  text-align: justify;
+  font-size: 1.3rem;
+}
+figure figcaption {
+  margin-bottom: 8px;
+  text-align: justify;
+  font-size: 1.3rem;
 }
 
 footer {

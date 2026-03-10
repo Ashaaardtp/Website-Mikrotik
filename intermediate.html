@@ -198,18 +198,70 @@
               <li>
                 <figcaption>
                   <p>
-                    Pertama, kalian buat IP untuk wlan1
-                    di menu IP > Addresses. Lalu klik Add dan ganti interface ke wlan1, dan langung isi address yang sesuai dengan soal, atau aku akan kasih studi kasus lagi.
+                    Pertama, kalian buat IP untuk
+                    wlan1 di menu IP > Addresses.
+                    Lalu klik Add dan ganti
+                    interface ke wlan1, dan
+                    langung isi address yang
+                    sesuai dengan soal, atau aku
+                    akan kasih studi kasus lagi.
                   </p>
                   <div class="studi-kasus">
                     <ol>
                       <li>
                         <span
-                          >wlan1- = 192.168.10.0/24 - Dengan jumlah client 19</span
+                          >wlan1- =
+                          192.168.10.0/24 - Dengan
+                          jumlah client 19</span
                         >
                       </li>
                     </ol>
                   </div>
+                </figcaption>
+              </li>
+
+              <img
+                src=""
+                alt="Sabar ya, saya lagi cari gambar UI nya."
+                class="zoom" />
+            </figure>
+            <figure>
+              <li>
+                <figcaption>
+                  <p>
+                    Setelah membuat IP ayo kita
+                    bikin DHCP Server untuk wlan1
+                    agar pemberian IP ke client
+                    akan dilakukan secara
+                    otomatis. Tidak jauh beda
+                    caranya dengan DHCP Server di
+                    interface ether2-LAN.
+                  </p>
+                  <p>
+                    Masuk ke menu IP > DHCP
+                    Server. Lalu klik DHCP setup,
+                    dan pilih interface ke wlan1.
+                    Lalu next 3x sampai address to
+                    give out.
+                  </p>
+                </figcaption>
+              </li>
+
+              <img
+                src=""
+                alt="Sabar ya, saya lagi cari gambar UI nya."
+                class="zoom" />
+            </figure>
+            <figure>
+              <li>
+                <figcaption>
+                  <p>
+                    Lalu kita ubah 254 menjadi 20,
+                    karena client yang diminta
+                    hanya 19, inget cara hitungnya
+                    kan? Setelah itu next 3x lagi
+                    dan selesai.
+                  </p>
                 </figcaption>
               </li>
 
@@ -223,8 +275,9 @@
               <li>
                 <figcaption>
                   <p>
-                    Setelah bikin IP untuk wlan1, masuk ke menu
-                    Wireless.
+                    Setelah bikin IP dan DHCP
+                    Server untuk wlan1, masuk ke
+                    menu Wireless.
                   </p>
                 </figcaption>
               </li>
@@ -388,34 +441,327 @@
 
       <section
         class="section-satu submodul"
-        id="satu">
+        id="dua">
         <button class="buttons" id="btn-dropdown">
           Buka Sub-Modul
         </button>
+        <div class="dropdown-content">
+          <p>
+            Pernah nggak sih ngerasa risih kalau
+            ada orang iseng nge-cek rumah kita ada
+            orangnya atau nggak? Nah, di dunia
+            jaringan, 'Ping' itu kayak orang
+            ngetok pintu. Kalau dibiarin, orang
+            bisa tau router kita aktif dan mungkin
+            aja mereka nyoba 'bobol' pintunya.
+            Kita bakal belajar cara bikin router
+            kamu jadi introvert—ada barangnya,
+            tapi kalau diketuk (di-ping), dia diem
+            aja seolah nggak ada orang
+          </p>
+          <p>
+            Yup, kita akan melakukan konfigurasi
+            blokir ping ke router, jadi seorang
+            client tidak akan mendapatkan respon
+            ketika melakukan ping ke IP router.
+            Dalam dunia networking, keamanan
+            adalah harga mati. Secara default,
+            router akan menjawab setiap permintaan
+            "Ping" (ICMP) untuk menunjukkan bahwa
+            dia aktif. Masalahnya, ini bisa
+            dimanfaatkan orang iseng untuk
+            memetakan jaringanmu. Dengan memblokir
+            Ping ke arah router, kita seolah-olah
+            memakai "jubah menghilang". Router
+            tetap bekerja normal melayani
+            internet, tapi bagi orang luar,
+            perangkatmu dianggap tidak ada atau
+            mati. <br />
+            Mari kita buat router kamu jadi lebih
+            private. Simak cara setting
+            firewall-nya di bawah ini.
+          </p>
+          <ol class="langkah-langkah">
+            <figure>
+              <li>
+                <figcaption>
+                  Masuk ke menu IP dan cari
+                  Firewall.
+                </figcaption>
+              </li>
+
+              <img
+                src="./assets/images/UI Mikrotik/Blokir PING Router/IP.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+            <figure>
+              <li>
+                <figcaption>
+                  Klik firewall dan nanti akan
+                  muncul popup.
+                </figcaption>
+              </li>
+
+              <img
+                src="./assets/images/UI Mikrotik/Blokir PING Router/Firewall.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  Kalian masuk ke tab Filter Rules
+                  dan klik tombol add/+
+                </figcaption>
+              </li>
+
+              <img
+                src="./assets/images/UI Mikrotik/Blokir PING Router/Filter Rules & Plus.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+            <figure>
+              <li>
+                <figcaption>
+                  Nah disini cukup banyak yang
+                  harus kalian isi, aku uraikan
+                  dibawah ya:
+
+                  <ol
+                    class="langkah-langkah bulet">
+                    <li>chain: input</li>
+                    <li>
+                      Dst. Address:
+                      192.168.1.2-192.168.1.50
+                    </li>
+                    <li>Protocol: icmp</li>
+                    <li>
+                      In. Interface: ether2-LAN
+                    </li>
+                    <li>Action: drop</li>
+                  </ol>
+                </figcaption>
+              </li>
+
+              <img
+                src="./assets/images/UI Mikrotik/Blokir PING Router/New Firewall Rule.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+
+              <p>
+                Ini bagian Action yang harus
+                kalian ubah menjadi drop.
+              </p>
+
+              <img
+                src="./assets/images/UI Mikrotik/Blokir PING Router/Action.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+
+              <p>
+                Tambahkan comment juga, ini
+                opsional, tapi setelah semakin
+                banyak kita konfigurasi, akan
+                bingung nantinya jika ada
+                perubahan di settingan tertentu.
+                Jadi lebih baik diberi comment
+                agar melabeli konfigurasi kita.
+              </p>
+              <img
+                src="./assets/images/UI Mikrotik/Blokir PING Router/Comment.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+
+              <p>
+                Tinggal klik ada tombol comment
+                yang ada sejajar dengan tombol
+                Apply dan OK ya..
+              </p>
+            </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  Ini dia hasil dari konfigurasi
+                  kita, asik.. untuk bagian
+                  testing ping, saya akan
+                  lampirkan juga dibawah ya.
+                </figcaption>
+              </li>
+
+              <img
+                src="./assets/images/UI Mikrotik/Blokir PING Router/Hasil.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  Nah kalau comment kalian itu gak
+                  muncul diatas kayak punyaku,
+                  kalian matiin inline comment
+                  yang ada di setting tempat kita
+                  matiin hide password.
+                </figcaption>
+              </li>
+
+              <img
+                src="assets/images/UI Mikrotik/Blokir PING Router/Inline Comments.png"
+                class="zoom" />
+            </figure>
+          </ol>
+
+          <p>
+            Gimana? Susah gak? Aman lah ya, kalau
+            masih bingung wajar, nanti kalian coba
+            praktek di lab aja, harus serius
+            ikutin prakteknya, oh iya langkah ini
+            penting banget buat bikin jaringamu
+            nggak gampang dipetakan oleh orang
+            iseng. Sekarang, kalau ada yang coba
+            nge-ping, mereka cuma bakal dapet
+            balasan Request Timed Out yang dingin.
+          </p>
+        </div>
       </section>
 
       <section
         class="section-satu submodul"
-        id="satu">
+        id="tiga">
         <button class="buttons" id="btn-dropdown">
           Buka Sub-Modul
         </button>
+        <div class="dropdown-content">
+          <p>
+            Masih soal blokir-memblokir, tapi kali
+            ini lebih spesifik. Bayangin kamu lagi
+            asik Wi-Fi-an, terus ada temenmu yang
+            iseng nge-ping perangkat wireless kamu
+            cuma buat ganggu. Di sini kita bakal
+            batasi akses itu. Intinya: 'Kamu boleh
+            pakai Wi-Fi aku, tapi jangan kepoin
+            dalemannya ya!'. Kita jaga privasi
+            antar pengguna wireless biar tetep
+            aman terkendali.
+          </p>
+          <p>
+            Nah, kalau sebelumnya kita memproteksi
+            router, sekarang kita batasi akses di
+            jalur Wi-Fi. Terkadang, kita tidak
+            ingin sesama pengguna Wi-Fi saling
+            "colek" atau melihat keberadaan
+            perangkat satu sama lain. Dengan
+            memblokir Ping khusus di interface
+            wireless, kamu menciptakan sekat
+            keamanan tambahan. Ini sangat berguna
+            kalau kamu lagi bikin jaringan publik
+            atau hotspot, supaya antar pengguna
+            tidak bisa saling ganggu. <br />
+            Biar pengguna Wi-Fi kamu lebih aman
+            dan tertib, ikuti panduan
+            konfigurasinya berikut ini.
+          </p>
+
+          <ol class="langkah-langkah">
+            <figure>
+              <li>
+                <figcaption>
+                  Macam biasa, kita buka menu IP.
+                </figcaption>
+              </li>
+
+              <img
+                src="assets/images/UI Mikrotik/Blokir PING Wireless/IP.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+
+              <p>Lalu masuk ke Firewall</p>
+              <img
+                src="assets/images/UI Mikrotik/Blokir PING Wireless/Firewall.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+          </ol>
+        </div>
       </section>
 
       <section
         class="section-satu submodul"
-        id="satu">
+        id="empat">
         <button class="buttons" id="btn-dropdown">
           Buka Sub-Modul
         </button>
+        <div class="dropdown-content">
+          <p>
+            Nah, ini fitur favorit para orang tua
+            atau admin kos-kosan yang galak. Kamu
+            bisa ngatur kapan internet itu hidup
+            dan kapan dia harus 'tidur'. Mau
+            internet mati otomatis jam 11 malam
+            biar nggak begadang? Bisa banget! Kita
+            bakal mainan sama fitur Scheduler.
+            Jadi, kamu nggak perlu cabut kabel
+            manual tiap malam, biarin si Mikrotik
+            yang kerja jadi satpam jam malam kamu.
+          </p>
+          <p>
+            Mikrotik punya fitur keren bernama
+            Scheduler yang bisa bikin hidup admin
+            jaringan jadi lebih teratur. Konsepnya
+            sederhana: otomasi. Kamu bisa mengatur
+            skrip agar berjalan pada jam-jam
+            tertentu secara otomatis, misalnya
+            mematikan akses internet saat jam
+            tidur atau melakukan reboot rutin agar
+            performa router tetap segar. Nggak
+            perlu lagi deh bangun tengah malam
+            cuma buat matiin colokan router!
+            <br />
+            Mau jadi admin yang punya banyak waktu
+            luang? Langsung aja pelajari cara
+            mainin scheduler-nya di bawah ya.
+          </p>
+        </div>
       </section>
 
       <section
         class="section-satu submodul"
-        id="satu">
+        id="lima">
         <button class="buttons" id="btn-dropdown">
           Buka Sub-Modul
         </button>
+        <div class="dropdown-content">
+          <p>
+            Sub-modul terakhir di kelas
+            Intermediate: Jadi Detektif! Pernah
+            penasaran nggak sih, siapa aja yang
+            coba masuk ke router kamu? Atau pengen
+            tau kenapa tadi koneksi sempat putus?
+            Logging itu kayak buku diary-nya
+            Mikrotik. Semua kejadian penting
+            dicatat di sini. Jadi kalau ada
+            masalah, kamu nggak perlu nebak-nebak
+            buah manggis, tinggal baca catatannya
+            aja.
+          </p>
+          <p>
+            Bayangkan Logging ini sebagai rekaman
+            CCTV untuk semua aktivitas di dalam
+            sistem Mikrotik. Setiap kali ada yang
+            mencoba masuk, ada error pada sistem,
+            atau ada interface yang mati-nyala,
+            Mikrotik akan mencatatnya. Belajar
+            membaca Log adalah langkah awal
+            menjadi Network Engineer profesional,
+            karena dari sinilah kamu bisa
+            melakukan troubleshooting (mencari
+            solusi masalah) dengan data yang
+            akurat, bukan sekadar tebak-tebakan.
+          </p>
+        </div>
       </section>
     </main>
 
