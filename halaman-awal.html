@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -45,6 +45,9 @@
         </button>
         <ul id="nav-menu">
           <li>
+            <a href="./index.html">Beranda</a>
+          </li>
+          <li>
             <a
               href="https://www.dicoding.com/users/ashaardtp/academies"
               >Profile Dicoding</a
@@ -71,40 +74,83 @@
       </nav>
     </header>
 
-    <main>
-      <div class="bagian-kiri">
+    <main class="bento-grid">
+      <!-- Welcome Hero Section -->
+      <section class="bento-item hero-bento">
         <article class="selamat-datang">
-          <h1 class="title-selamat-datang">
-            Haloo!
-          </h1>
-          <p class="text-selamat-datang">
-            Di halaman ini kamu akan belajar
-            banyak hal mengenai mikrotik yang
-            cocok sebagai starting poin mu sebelum
-            praktik di Lab nantinya... Semangat
-          </p>
+          <div class="hero-content">
+            <h1 class="title-selamat-datang">
+              <span class="gradient-text"
+                >Haloo!</span
+              >
+            </h1>
+            <p class="text-selamat-datang">
+              Di halaman ini kamu akan belajar
+              banyak hal mengenai mikrotik yang
+              cocok sebagai starting poin mu
+              sebelum praktik di Lab nantinya...
+              Semangat 🚀
+            </p>
+          </div>
         </article>
-      </div>
+      </section>
 
-      <div class="bagian-kanan">
-        <article class="basic" id="basic">
-          <div class="title-difficulty">
-            <h2 class="title">Basic</h2>
-            <h3>⁕</h3>
+      <!-- Featured Mikrotik Image -->
+      <section
+        class="bento-item featured-image-bento">
+        <div class="featured-card">
+          <div class="featured-icon">
+            <i class="fas fa-network-wired"></i>
+          </div>
+          <h3>RouterOS</h3>
+          <p>
+            Kenal lebih dalam dengan interface
+            Mikrotik
+          </p>
+        </div>
+      </section>
+
+      <!-- Basic Card -->
+      <section
+        class="bento-item card-bento basic-bento"
+        id="basic">
+        <div class="card-content">
+          <div class="card-header">
+            <div class="card-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <div class="title-difficulty">
+              <h2 class="title">Basic</h2>
+              <span class="stars">⁕</span>
+            </div>
           </div>
           <p class="text">
             Di section basic ini kamu akan belajar
             hal-hal paling dasar dalam dunia
             mikrotik, sudah siap nyebur? Gass!
           </p>
-        </article>
+          <a
+            href="basic.html"
+            class="btn-belajar">
+            <i class="fas fa-play"></i> Mulai
+            Belajar
+          </a>
+        </div>
+      </section>
 
-        <article
-          class="intermediate"
-          id="intermediate">
-          <div class="title-difficulty">
-            <h2 class="title">intermediate</h2>
-            <h3>⁕⁕⁕</h3>
+      <!-- Intermediate Card -->
+      <section
+        class="bento-item card-bento intermediate-bento"
+        id="intermediate">
+        <div class="card-content">
+          <div class="card-header">
+            <div class="card-icon">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <div class="title-difficulty">
+              <h2 class="title">Intermediate</h2>
+              <span class="stars">⁕⁕⁕</span>
+            </div>
           </div>
           <p class="text">
             Di section intermediate ini kamu akan
@@ -112,35 +158,109 @@
             mikrotik. Sudah siap untuk naik level?
             Ayo kita lanjut!
           </p>
-        </article>
+          <a
+            href="intermediate.html"
+            class="btn-belajar">
+            <i class="fas fa-play"></i> Mulai
+            Belajar
+          </a>
+        </div>
+      </section>
 
-        <article class="expert" id="expert">
-          <div class="title-difficulty">
-            <h2 class="title">Expert</h2>
-            <h2>⁕⁕⁕⁕⁕</h2>
+      <!-- Expert Card -->
+      <section
+        class="bento-item card-bento expert-bento"
+        id="expert">
+        <div class="card-content">
+          <div class="card-header">
+            <div class="card-icon">
+              <i class="fas fa-crown"></i>
+            </div>
+            <div class="title-difficulty">
+              <h2 class="title">Expert</h2>
+              <span class="stars">⁕⁕⁕⁕⁕</span>
+            </div>
           </div>
           <p class="text">
             Selamat datang di expert. Sudah siap
             untuk menghadapi tantangan terberat?
           </p>
-        </article>
-      </div>
+          <a
+            href="expert.html"
+            class="btn-belajar">
+            <i class="fas fa-play"></i> Mulai
+            Belajar
+          </a>
+        </div>
+      </section>
 
-      <article>
-        <h2>Penting!!</h2>
-        <p>
-          Setelah mendapatkan informasi dari web
-          ini, saya harap kalian tidak menjadi
-          seseorang yang merasa lebih dulu tahu
-          dari orang yang belum tahu. Jadi, jangan
-          sombong dan saya harap kalian di lab
-          harus tetap mengikuti apa kata guru.
-          Jangan karena sudah mengetahui suatu
-          informasi dari sini, kalian jadi tidak
-          mengikuti instruksi guru. Mohon
-          Kerjasamanya teman-teman.
-        </p>
-      </article>
+      <!-- Mikrotik UI Preview 1 -->
+      <section class="bento-item image-bento">
+        <div class="image-card">
+          <img
+            src="./assets/images/UI Mikrotik/Bikin IP/IP.png"
+            alt="Mikrotik IP Configuration" />
+          <div class="image-overlay">
+            <span
+              ><i class="fas fa-ip"></i> IP
+              Address</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Mikrotik UI Preview 2 -->
+      <section class="bento-item image-bento">
+        <div class="image-card">
+          <img
+            src="./assets/images/UI Mikrotik/DHCP Server/DHCP Server.png"
+            alt="Mikrotik DHCP Server" />
+          <div class="image-overlay">
+            <span
+              ><i class="fas fa-server"></i> DHCP
+              Server</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Mikrotik UI Preview 3 -->
+      <section class="bento-item image-bento">
+        <div class="image-card">
+          <img
+            src="./assets/images/UI Mikrotik/Konfigurasi Wireless/Setting.png"
+            alt="Mikrotik Wireless" />
+          <div class="image-overlay">
+            <span
+              ><i class="fas fa-wifi"></i>
+              Wireless</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Important Notice -->
+      <section class="bento-item notice-bento">
+        <article class="penting">
+          <div class="notice-icon">
+            <i
+              class="fas fa-exclamation-triangle"></i>
+          </div>
+          <h2>Penting!!</h2>
+          <p>
+            Setelah mendapatkan informasi dari web
+            ini, saya harap kalian tidak menjadi
+            seseorang yang merasa lebih dulu tahu
+            dari orang yang belum tahu. Jadi,
+            jangan sombong dan saya harap kalian
+            di lab harus tetap mengikuti apa kata
+            guru. Jangan karena sudah mengetahui
+            suatu informasi dari sini, kalian jadi
+            tidak mengikuti instruksi guru. Mohon
+            Kerjasamanya teman-teman.
+          </p>
+        </article>
+      </section>
     </main>
 
     <footer>

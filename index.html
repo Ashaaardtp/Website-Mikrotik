@@ -51,18 +51,6 @@
               >Profile Dicoding</a
             >
           </li>
-          <li>
-            <a
-              href="https://www.github.com/ashaaardtp"
-              >Github</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/ashaardtp?igsh=Z2trZnlxaTRIY3Nn"
-              >Instagram</a
-            >
-          </li>
           <button id="buat-guru">
             Buat Guru
           </button>
@@ -75,129 +63,149 @@
       </nav>
     </header>
 
-    <main>
-      <article class="hero-section">
-        <div class="overlay"></div>
-
-        <div class="hero-content">
-          <h1>Selamat Datang</h1>
-          <p>
-            Di website ini saya sebagai lulusan
-            SMK Al-Hadi membuat sesuatu yang dapat
-            teman-teman manfaatkan kedepannya
-            untuk belajar Mikrotik dari rumah, dan
-            saya jamin kalian akan lebih mudah
-            mengikuti praktek nantinya karena
-            sudah membaca materi-materi yang saya
-            sediakan disini... Semoga kalian suka
-            dengan cara penyajian materiku ini
-            ya🤩
-          </p>
+    <main class="bento-grid">
+      <!-- Hero Section - Large bento item -->
+      <section class="bento-item hero-bento">
+        <div class="hero-section">
+          <div class="overlay"></div>
+          <div class="hero-content">
+            <h1>Selamat Datang</h1>
+            <p>
+              Di website ini saya sebagai lulusan
+              SMK Al-Hadi membuat sesuatu yang
+              dapat teman-teman manfaatkan
+              depannya untuk belajar Mikrotik dari
+              rumah, dan saya jamin kalian akan
+              lebih mudah mengikuti praktek
+              nantinya karena sudah membaca
+              materi-materi yang saya sediakan
+              sini...Semoga kalian suka dengan
+              cara penyajian materiku ini ya🤩
+            </p>
+          </div>
         </div>
-      </article>
+      </section>
 
-      <article class="kenalan">
-        <div class="kiri">
-          <h2>Kenalan dulu yuk!!</h2>
-          <p>
-            Haloo temen-temen dari masa depan,
-            perkenalkan saya
-            <span>Pasha Raditya Putra</span> dari
-            kelas
-            <span>12 TJKT 2</span> (Setidaknya
-            saat web ini dibuat), saya membangun
-            website ini karena tiba-tiba
-            terpikir.<br />
-            <q
-              >Hmmm aku suka coding, mikrotik juga
-              bisa dibilang jago lah😁, bikin web
-              tentang mikrotik ah. </q
-            ><br />
-            saya tidak bermaksud untuk
-            menggantikan guru yang mengajari
-            mikrotik, saya hanya sebagai pemberi
-            bekal buat temen-temen aja biar siap
-            praktek sama bos-bos terakhir di lab
-            nanti.
-          </p>
-        </div>
+      <!-- Kenalan Section - Profile bento -->
+      <section class="bento-item profile-bento">
+        <article class="kenalan">
+          <div class="kiri">
+            <h2>Kenalan dulu yuk!!</h2>
+            <p>
+              Haloo temen-temen dari masa depan,
+              perkenalkan saya
+              <span>Pasha Raditya Putra</span>
+              dari kelas
+              <span>12 TJKT 2</span> (Setidaknya
+              saat web ini dibuat), saya membangun
+              website ini karena tiba-tiba
+              terpikir.<br />
+              <q
+                >Hmmm aku suka coding, mikrotik
+                juga bisa bilang jago lah,bikin
+                web tentang mikrotik ah. </q
+              ><br />
+              saya tidak bermaksud untuk pengganti
+              guru yang mengajari mikrotik, saya
+              hanya sebagai pemberi bekal buat
+              temen-temen aja biar siap praktek
+              sama bos-bos terakhir di lab nanti.
+            </p>
+          </div>
+          <div class="kanan">
+            <img
+              src="./assets/images/Lainnya/profile.webp"
+              alt="Foto saya" />
+          </div>
+        </article>
+      </section>
 
-        <div class="kanan">
-          <img
-            src="./assets/images/Lainnya/profile.webp"
-            alt="Foto saya" />
-        </div>
-      </article>
-
-      <article class="pembelajaran">
-        <h2>
-          Apa aja yang akan saya share buat
-          kalian?
-        </h2>
-        <ol>
+      <!-- Basic Card - Bento -->
+      <section
+        class="bento-item card-bento basic-bento">
+        <div class="card-content">
+          <div class="card-icon">
+            <i class="fas fa-seedling"></i>
+          </div>
           <h3>Basic</h3>
-          <li>Topologi yang digunakan</li>
-          <li>Ganti nama Router Mikrotik</li>
-          <li>
-            Ganti nama port ethernet di Mikrotik
-          </li>
-          <li>
-            Buat IP Address sesuai dengan yang
-            diminta
-          </li>
-          <li>Meminta IP ISP ke DHCP Client</li>
-          <li>
-            Membuat DHCP Server untuk memberikan
-            IP pada client
-          </li>
-          <li>
-            Setting NAT agar Mikrotik memiliki
-            akses internet
-          </li>
-        </ol>
+          <ol>
+            <li>Topologi yang digunakan</li>
+            <li>Ganti nama Router Mikrotik</li>
+            <li>Ganti nama port ethernet</li>
+            <li>Buat IP Address</li>
+            <li>Minta IP ISP ke DHCP Client</li>
+            <li>Membuat DHCP Server</li>
+            <li>Setting NAT</li>
+          </ol>
+        </div>
+      </section>
 
-        <ol>
-          <h3>Intermedate</h3>
-          <li>Membuat Wi-Fi</li>
-          <li>Blokir ping ke router</li>
-          <li>Blokir ping ke wireless</li>
-          <li>Penjadwalan internet</li>
-          <li>Logging</li>
-        </ol>
+      <!-- Intermediate Card - Bento -->
+      <section
+        class="bento-item card-bento intermediate-bento">
+        <div class="card-content">
+          <div class="card-icon">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h3>Intermediate</h3>
+          <ol>
+            <li>Membuat Wi-Fi</li>
+            <li>Blokir ping ke router</li>
+            <li>Blokir ping ke wireless</li>
+            <li>Penjadwalan internet</li>
+            <li>Logging</li>
+          </ol>
+        </div>
+      </section>
 
-        <ol>
+      <!-- Expert Card - Bento -->
+      <section
+        class="bento-item card-bento expert-bento">
+        <div class="card-content">
+          <div class="card-icon">
+            <i class="fas fa-crown"></i>
+          </div>
           <h3>Expert</h3>
-          <li>Hotspot</li>
-          <li>Blokir web pake DNS</li>
-          <li>Radius</li>
-        </ol>
+          <ol>
+            <li>Hotspot</li>
+            <li>Blokir web pake DNS</li>
+            <li>Radius</li>
+          </ol>
+        </div>
+      </section>
 
+      <!-- CTA Card - Bento -->
+      <section class="bento-item cta-bento">
         <button class="last" id="belajar">
           Selamat Belajar Guys!!!
         </button>
-      </article>
+      </section>
 
-      <article
-        class="buatGuru"
+      <!-- Buat Guru Section (Hidden by default) -->
+      <section
+        class="bento-item buatGuru-bento"
         id="pesan-buat-guru"
         hidden>
-        <h2>
-          Untuk Bapak & Ibu TJKT SMK Al-Hadi
-          Bandung
-        </h2>
-        <p>
-          Pak/Bu Pasha izin bikin website tentang
-          mikrotik ini, karena Pasha selalu pengen
-          ajarin adik kelas soal hal yang
-          kedepannya bakal mereka jalanin gitu,
-          cuman disini Pasha ngga ada maksud
-          mendahului apa yang Bapak/Ibu sampaikan
-          ke temen-temen, jadi pure ini Pasha
-          pengen bikin satu project yang jadi dan
-          terpakai dengan isi yang relevan di
-          Jurusan TJKT bu terutama kelas 12
-        </p>
-      </article>
+        <article class="buatGuru">
+          <h2>
+            Untuk Bapak & Ibu TJKT SMK Al-Hadi
+            Bandung
+          </h2>
+          <p>
+            Pak/Bu Pasha izin bikin website
+            tentang mikrotik ini, karena Pasha
+            selalu pengen ajarin adik kelas soal
+            hal yang depannya bakal mereka jalanin
+            gitu, cuman sini Pasha ngga ada maksud
+            mendahului apa yang Bapak/Ibu
+            sampaikan ke temen-temen, jadi pure
+            ini Pasha pengen bikin satu project
+            yang jadi dan terpakai dengan isi yang
+            relevan di Jurusan TJKT bu terutama
+            kelas 12
+          </p>
+        </article>
+      </section>
     </main>
 
     <footer>
@@ -206,13 +214,13 @@
           <h3 class="footer-title">Mpash</h3>
           <div class="social-links">
             <a
-              href="#"
+              href="https://www.github.com/ashaaardtp"
               target="_blank"
               title="GitHub"
               ><i class="fab fa-github"></i
             ></a>
             <a
-              href="#"
+              href="https://www.instagram.com/ashaardtp"
               target="_blank"
               title="Instagram"
               ><i class="fab fa-instagram"></i
