@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Jost", sans-serif;
   background-color: var(--background-light);
@@ -143,6 +147,17 @@ article,
 article .submodul h2 {
   text-shadow: 1px 1px 4px rgba(122, 29, 184, 0.4);
   color: var(--secondary-color);
+}
+
+.tambahan {
+  margin-inline: 1.1rem;
+  margin-block: 2rem;
+  padding: 1rem;
+  box-shadow: var(--shadow-md);
+  font-size: 1.2rem;
+  transition: var(--snappy-transition);
+  overflow: hidden;
+  background-color: white;
 }
 
 .buttons {
@@ -288,10 +303,14 @@ article .submodul h2 {
   transform: scale(1.02);
 }
 
+.testing {
+  margin-bottom: 12px;
+}
+
 figure img {
   margin-bottom: 12px;
   min-width: 50%;
-  max-width: 80%;
+  width: 80%;
 }
 
 figure {
@@ -328,6 +347,7 @@ footer {
 
 .bulet li {
   list-style-type: disc;
+  text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -366,5 +386,8 @@ footer {
   }
   .hamburger.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+  }
+  figure img {
+    width: 100%;
   }
 }

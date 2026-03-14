@@ -156,6 +156,62 @@
         </p>
       </article>
 
+      <section class="tambahan">
+        <h2>Src. Address & Dst. Address</h2>
+        <button class="buttons" id="btn-dropdown">
+          Buka Sub-Modul
+        </button>
+        <div class="dropdown-content">
+          <p>
+            Sebelum masuk ke materi dibawah,
+            kalian wajib tau soal ini dulu,
+            kenapa? karena ini berkaitan dengan
+            beberapa konfigurasi yang akan kita
+            lakukan.
+          </p>
+
+          <ol>
+            <li>
+              <h2>
+                Src. Address (Source Address)
+              </h2>
+              <ol class="langkah-langkah bulet">
+                <li>
+                  Definisi: Alamat IP asal atau
+                  pengirim paket data.
+                </li>
+                <li>
+                  Fungsi: Digunakan untuk
+                  mengidentifikasi dari mana
+                  sebuah koneksi dimulai.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h2>
+                Dst. Address (Destination Address)
+              </h2>
+              <ol class="langkah-langkah bulet">
+                <li>
+                  Definisi: Alamat IP tujuan yang
+                  hendak diakses oleh paket data.
+                </li>
+                <li>
+                  Fungsi: Digunakan untuk
+                  menentukan ke mana paket data
+                  tersebut harus dikirimkan.
+                </li>
+              </ol>
+            </li>
+          </ol>
+
+          <p>
+            Di materi Blokir ping, kalian akan
+            relate dengan pembahasan ini.
+          </p>
+        </div>
+      </section>
+
       <section
         class="section-satu submodul"
         id="satu">
@@ -533,7 +589,7 @@
                     class="langkah-langkah bulet">
                     <li>chain: input</li>
                     <li>
-                      Dst. Address:
+                      Src. Address:
                       192.168.1.2-192.168.1.50
                     </li>
                     <li>Protocol: icmp</li>
@@ -615,6 +671,41 @@
           </ol>
 
           <p>
+            Disini kita pakai Src address, yang
+            pernah aku singgung dipaling awal.
+            Kalau mau mudah itu bisa dibaca
+            seperti ini "Jika ada ping dari IP
+            Address 192.168.1.2-192.168.1.50,
+            berikan response Request Time Out.
+            Sebaliknya kalau dari range IP
+            192.168.1.51-192.168.1.100, berikan
+            response reply." Terus kenapa Dst gak
+            diisi? Gimana mikrotik tau kalau kita
+            ingin blokir ping yang masuk ke
+            router? Jawabannya adalah dari chain
+            yang kita isi input. Selama chain itu
+            masih input, mikrotik akan langsung
+            tau bahwa tujuannya adalah dia
+            sendiri. Nice, semoga kalian mengerti
+            ya...
+          </p>
+
+          <p>
+            Okee itu baru langkah konfigurasi,
+            sekarang gimana caranya kita tau kalau
+            Router kita gabisa di ping sama
+            client? Kita harus lakuin langkah
+            testing lewat cmd, perhatikan langkah
+            dibawah ini
+          </p>
+
+          <ol class="testing">
+            <h2>"On Progress"</h2>
+          </ol>
+
+          <hr />
+
+          <p>
             Gimana? Susah gak? Aman lah ya, kalau
             masih bingung wajar, nanti kalian coba
             praktek di lab aja, harus serius
@@ -684,6 +775,113 @@
                 alt="UI Mikrotik"
                 class="zoom" />
             </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  Setelah itu klik tombol Add yang
+                  ada di tab filter rules.
+                </figcaption>
+              </li>
+
+              <img
+                src="assets/images/UI Mikrotik/Blokir PING Wireless/Filter Rules & Plus.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  Oke disini sebenarnya tidak jauh
+                  dari blokir ping router hanya
+                  saja kita ubah beberapa hal
+                  saja. Simak list dibawah ini:
+
+                  <ol
+                    class="langkah-langkah bulet">
+                    <li>chain: forward</li>
+                    <li>
+                      Src. Address:
+                      192.168.1.51-192.168.1.100
+                    </li>
+                    <li>
+                      Dst. Address:
+                      192.168.10.0/24
+                    </li>
+                    <li>Protocol: icmp</li>
+                    <li>
+                      In. Interface: ether2-LAN
+                    </li>
+                    <li>Action: drop</li>
+                    <li>
+                      Comment: Blokir Ping
+                      Wireless
+                    </li>
+                  </ol>
+                </figcaption>
+              </li>
+
+              <img
+                src="assets/images/UI Mikrotik/Blokir PING Wireless/New Firewall Rule.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+
+              <img
+                src="assets/images/UI Mikrotik/Blokir PING Wireless/Action.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+
+              <img
+                src="assets/images/UI Mikrotik/Blokir PING Wireless/Comment.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+
+              <p>
+                Nah sadar kan beberapa hal
+                berubah, chain jadi forward, Src
+                address dimulai dari 51-100, terus
+                nambah Dst address nih, apa itu?
+                Udah dijelasin kan kalau chain
+                input mikrotik akan tau otomatis
+                tujuannya (Dst. Address) sedangkan
+                saat ini kita pakai chain forward
+                (Teruskan) artinya gak ada ping
+                yang masuk ke router, tapi router
+                akan meneruskan ke alamat IP Dst
+                lain, itulah sebabnya kita harus
+                isi...
+              </p>
+              <p>
+                Kita isi dengan 192.168.10.0/24
+                Kenapa oktet terakhir 0? Karena
+                kita mencakup semua IP address,
+                otomatis kita hanya perlu isi Dst.
+                Address dengan IP Network saja,
+                seperti ituu, nanti akan lebih
+                jelas dibagian testing ya..
+              </p>
+
+              <hr />
+
+              <ol class="testing">
+                <h2>"On Progress"</h2>
+              </ol>
+            </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  Ini hasil dari semua konfigurasi
+                  yang kita lakukan.
+                </figcaption>
+              </li>
+
+              <img
+                src="assets/images/UI Mikrotik/Blokir PING Wireless/Hasil.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
           </ol>
         </div>
       </section>
@@ -723,6 +921,216 @@
             Mau jadi admin yang punya banyak waktu
             luang? Langsung aja pelajari cara
             mainin scheduler-nya di bawah ya.
+          </p>
+
+          <ol class="langkah-langkah">
+            <figure>
+              <li>
+                <figcaption>
+                  Wokeh masuk nih kita ke fitur
+                  yang simpel tapi sangat
+                  dibutuhkan untuk efisiensi.
+                  Karena ini berhubungan dengan
+                  waktu. Dan di mikrotik memiliki
+                  fitur Clock yang mana itu
+                  menunjukkan waktu di mikrotik
+                  seperti jam, menit dan detik.
+                  Kalau kita ingin Clock ini
+                  sesuai dengan jam di negara
+                  indonesia, maka kita harus
+                  lakuin hal ini, klik System >
+                  SNTP Client. Disini ada tiga hal
+                  yang harus kita ubah.
+                </figcaption>
+              </li>
+
+              <img
+                src="assets/images/UI Mikrotik/Jadwal Waktu/"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  Tiga hal itu adalah:
+                  <ol
+                    class="langkah-langkah bulet">
+                    <li>Ceklis Enable</li>
+                    <li>
+                      Isi Primary NTP Server:
+                      id.pool.ntp.org
+                    </li>
+                    <li>
+                      Isi Secondary NTP Server:
+                      asia.pool.ntp.org
+                    </li>
+                  </ol>
+
+                  <p>
+                    Kenapa kudu diisi ini? Ini
+                    bertujuan menyinkronkan jam
+                    mikrotik agar akurat sesuai
+                    zona waktu Indonesia. Kalau di
+                    secondary, itu jaga jaga jika
+                    primary terjadi kesalahan.
+                  </p>
+                </figcaption>
+              </li>
+
+              <img
+                src="assets/images/UI Mikrotik/Jadwal Waktu/"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  Setelah itu kalian bisa masuk ke
+                  IP > Firewall > Tab Filter
+                  Rules.
+                </figcaption>
+              </li>
+
+              <img
+                src="assets/images/UI Mikrotik/Jadwal Waktu/IP.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+              <img
+                src="assets/images/UI Mikrotik/Jadwal Waktu/Firewall.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+              <img
+                src="assets/images/UI Mikrotik/Jadwal Waktu/Filter Rules & Add.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  Disini isi Chain ke forward,
+                  lalu In. Interface ke Ether1-ISP
+                  karena yang akan kita matikan
+                  adalah internet sekolah, kalau
+                  wifi, berarti di isi wlan1. Dan
+                  terakhir isi action ke drop.
+                </figcaption>
+              </li>
+
+              <img
+                src="assets/images/UI Mikrotik/Jadwal Waktu/New Firewall Rule.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+              <img
+                src="assets/images/UI Mikrotik/Jadwal Waktu/Action.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  Lalu kalian klik tab extra,
+                  disitu akan ada opsi time,
+                  disinilah kita akan mulai
+                  melakukan magic.
+                </figcaption>
+              </li>
+
+              <img
+                src="assets/images/UI Mikrotik/Jadwal Waktu/Belom Diisi.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  <p>
+                    Disini kita akan setting waktu
+                    kapan jaringan akan mati saja,
+                    jadi waktu nyala tidak perlu
+                    kita setting.
+                  </p>
+
+                  <p>
+                    Aku kasih contoh, internet
+                    sekolah hanya akan menyala di
+                    jam 12:00 sampai 17:00, gimana
+                    kita setting nya? Berarti jam
+                    internetnya adalah 17:01 -
+                    23:59 dan 00:00 - 11:59.
+                    Kenapa kita bikin dua? Karena
+                    mikrotik gabisa tau setting
+                    waktu yang berbeda hari, misal
+                    kita isi 17:01 - 11:59. Ini
+                    akan dihitung mundur dan malah
+                    jadi gak sesuai ekspektasi.
+                    Jadi kita bikin dua.
+                  </p>
+                </figcaption>
+              </li>
+              <img
+                src="assets/images/UI Mikrotik/Jadwal Waktu/Sudah diisi satu.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+              <img
+                src="assets/images/UI Mikrotik/Jadwal Waktu/Sudah diisi dua.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+
+              <p>
+                Comment opsional, tapi mending
+                dibikin karena menurutku ini
+                sangat penting untuk melabeli
+                konfigurasinya.
+              </p>
+            </figure>
+
+            <figure>
+              <li>
+                <figcaption>
+                  Gimana cara kita cek kalau
+                  konfigurasinya berhasil, kalian
+                  buka clock yang ada di menu
+                  stytem, setelah itu ubah jam nya
+                  menjadi jam yang termasuk
+                  kedalam konfigurasi kita
+                  sebelumnya, setelah diubah buka
+                  lagi firewall dan lihat,
+                  seharusnya hasil konfigurasi
+                  kita akan ada yang berwarna
+                  merah dan hitam satu, yang hitam
+                  menandakan konfigurasinya sedang
+                  berjalan, dan yang merah berarti
+                  belum aktif, karena memang
+                  syarat nya belum memenuhi yaitu
+                  jam 17:01 baru konfigurasi
+                  satunya akan hitam dan yang
+                  hitam akan menjadi merah, sama
+                  kayak gambar dibawah. Semoga
+                  paham ya.
+                </figcaption>
+              </li>
+              <img
+                src="assets/images/UI Mikrotik/Jadwal Waktu/Test.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+              <img
+                src="assets/images/UI Mikrotik/Jadwal Waktu/Test 2.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+            </figure>
+          </ol>
+
+          <p>
+            Sekarang kalian udah berhasil
+            menjadwalkan internet, internet akan
+            nyala dan mati sesuai dengan yang
+            kalian inginkan, mantap. Lanjut ke
+            submodul terakhir..
           </p>
         </div>
       </section>
