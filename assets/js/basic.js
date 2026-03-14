@@ -21,13 +21,6 @@ const btnIntermediate = document.getElementById(
   "goToIntermediate",
 );
 
-btnIntermediate.addEventListener(
-  "click",
-  function () {
-    window.location.href = "intermediate.html";
-  },
-);
-
 containerHeading.forEach((div, index) => {
   if (judulHeading[index]) {
     const heading = document.createElement("h2");
@@ -175,63 +168,74 @@ document.addEventListener(
 );
 
 // Initialize ViewerJS for image viewing
-document.addEventListener("DOMContentLoaded", function() {
-  // Find all images with zoom class and wrap them in a container
-  const zoomImages = document.querySelectorAll(".zoom");
-  
-  if (zoomImages.length > 0) {
-    // Create a container to hold all images for gallery view
-    const galleryContainer = document.createElement("div");
-    galleryContainer.id = "image-gallery";
-    galleryContainer.style.display = "none"; // Hidden container for ViewerJS
-    
-    // Clone all zoom images to the container
-    zoomImages.forEach(function(img, index) {
-      const clonedImg = img.cloneNode(true);
-      clonedImg.removeAttribute("onclick");
-      galleryContainer.appendChild(clonedImg);
-    });
-    
-    document.body.appendChild(galleryContainer);
-    
-    // Initialize Viewer on the container
-    const gallery = new Viewer(galleryContainer, {
-      inline: false,
-      button: true,
-      navbar: false,
-      title: false,
-      toolbar: {
-        zoomIn: true,
-        zoomOut: true,
-      },
-      tooltip: true,
-      movable: true,
-      zoomable: true,
-      rotatable: false,
-      scalable: false,
-      transition: true,
-      fullscreen: false,
-      keyboard: true,
-      loading: true,
-      loop: false,
-      minZoomRatio: 0.5,
-      maxZoomRatio: 4,
-      zIndex: 9999,
-      zIndexInline: 9999,
-      // When clicking original image, open the viewer
-      url: function(imageElement) {
-        return imageElement.src;
-      },
-    });
-    
-    // Add click event to original images to open gallery
-    zoomImages.forEach(function(img, index) {
-      img.style.cursor = "pointer";
-      img.addEventListener("click", function(e) {
-        e.preventDefault();
-        // Show the corresponding image in the gallery
-        gallery.view(index);
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+    // Find all images with zoom class and wrap them in a container
+    const zoomImages =
+      document.querySelectorAll(".zoom");
+
+    if (zoomImages.length > 0) {
+      // Create a container to hold all images for gallery view
+      const galleryContainer =
+        document.createElement("div");
+      galleryContainer.id = "image-gallery";
+      galleryContainer.style.display = "none"; // Hidden container for ViewerJS
+
+      // Clone all zoom images to the container
+      zoomImages.forEach(function (img, index) {
+        const clonedImg = img.cloneNode(true);
+        clonedImg.removeAttribute("onclick");
+        galleryContainer.appendChild(clonedImg);
       });
-    });
-  }
-});
+
+      document.body.appendChild(galleryContainer);
+
+      // Initialize Viewer on the container
+      const gallery = new Viewer(
+        galleryContainer,
+        {
+          inline: false,
+          button: true,
+          navbar: false,
+          title: false,
+          toolbar: {
+            zoomIn: true,
+            zoomOut: true,
+          },
+          tooltip: true,
+          movable: true,
+          zoomable: true,
+          rotatable: false,
+          scalable: false,
+          transition: true,
+          fullscreen: false,
+          keyboard: true,
+          loading: true,
+          loop: false,
+          minZoomRatio: 0.5,
+          maxZoomRatio: 4,
+          zIndex: 9999,
+          zIndexInline: 9999,
+          // When clicking original image, open the viewer
+          url: function (imageElement) {
+            return imageElement.src;
+          },
+        },
+      );
+
+      // Add click event to original images to open gallery
+      zoomImages.forEach(function (img, index) {
+        img.style.cursor = "pointer";
+        img.addEventListener(
+          "click",
+          function (e) {
+            e.preventDefault();
+            // Show the corresponding image in the gallery
+            gallery.view(index);
+          },
+        );
+      });
+    }
+  },
+);

@@ -1,12 +1,12 @@
 :root {
-  --primary-color: #1e3a8a;
-  --secondary-color: #3b82f6;
-  --accent-color: #f59e0b;
-  --background-light: #f8fafc;
-  --text-dark: #0f172a;
+  --primary-color: #000f08;
+  --secondary-color: #fb3640;
+  --accent-color: #fb3640;
+  --background-light: #f5f5f5;
+  --text-dark: #000f08;
   --text-white: #ffffff;
-  --hero-overlay: rgba(30, 58, 138, 0.7);
-  --card-bg: rgba(30, 58, 138, 0.85);
+  --hero-overlay: rgba(0, 15, 8, 0.8);
+  --card-bg: rgba(0, 15, 8, 0.9);
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
   --smooth-transition: all 0.2s ease;
@@ -22,7 +22,7 @@
 
 body {
   font-family: "Jost", sans-serif;
-  background-color: var(--background-light);
+  background-color: #000f08;
   color: var(--text-dark);
   line-height: 1.6;
 }
@@ -33,7 +33,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 4rem;
-  background-color: var(--text-white);
+  background-color: #000f08;
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
@@ -54,7 +54,7 @@ header {
   display: block;
   width: 30px;
   height: 2px;
-  background-color: var(--primary-color);
+  background-color: #ffffff;
   transition: var(--smooth-transition);
 }
 
@@ -69,20 +69,21 @@ ul {
 nav ul li a {
   text-decoration: none;
   font-weight: 700;
+  color: #ffffff;
   transition: var(--smooth-transition);
 }
 
 nav ul li a:hover {
-  color: var(--secondary-color);
+  color: #fb3640;
 }
 
 nav ul button {
-  background-color: var(--accent-color);
+  background-color: #fb3640;
   border: none;
   padding: 10px 16px;
   border-radius: 8px;
   transition: var(--smooth-transition);
-  color: var(--text-white);
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -99,7 +100,7 @@ nav .foto-profile {
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid var(--secondary-color);
+  border: 2px solid #fb3640;
 }
 
 header .profile #isi-kode.mulai {
@@ -114,10 +115,6 @@ header .profile #isi-kode.mulai {
   pointer-events: auto;
 }
 
-article {
-  margin-bottom: 2rem;
-}
-
 article p {
   font-size: 1.3rem;
 }
@@ -129,11 +126,8 @@ article h3 {
 .kenalan,
 .pembelajaran,
 .buatGuru {
-  margin: 2rem 2rem;
-  padding: 2rem;
-  background: white;
-  border-radius: 24px;
-  box-shadow: var(--shadow-md);
+  padding: 1rem;
+  background: #1a1a1a;
 }
 
 .kenalan {
@@ -148,20 +142,21 @@ article h3 {
 }
 
 .kiri q {
-  border-left: 2px solid var(--accent-color);
+  border-left: 2px solid #fb3640;
   padding-left: 5px;
   font-weight: bold;
+  color: #ffffff;
 }
 
 .kanan img {
   max-width: 300px;
   min-width: 150px;
   border-radius: 50%;
-  border: 2px solid var(--secondary-color);
+  border: 2px solid #fb3640;
 }
 
 h2 {
-  color: var(--primary-color);
+  color: #fb3640;
   margin-bottom: 1rem;
 }
 
@@ -244,8 +239,8 @@ ol li {
   font-size: 1.2rem;
 }
 
-.last button {
-  margin: auto;
+.last {
+  margin: 12px auto;
   display: flex;
   border: none;
   background-color: var(--accent-color);
@@ -259,18 +254,102 @@ ol li {
   box-shadow: var(--shadow-sm);
 }
 
-.last button:hover {
+.last:hover {
   transform: scale(1.05);
 }
 
-.last button:active {
+.last:active {
   transform: scale(1);
 }
 
 footer {
   text-align: center;
-  padding: 2rem;
   font-weight: 500;
+}
+
+.footer-container {
+  background: linear-gradient(
+    135deg,
+    #fb3640,
+    #000f08
+  );
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  min-width: 180px;
+  transition: var(--smooth-transition);
+}
+
+.footer-section:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.footer-title {
+  color: var(--text-white);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.placeholder-name {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: var(--text-white);
+  font-size: 1.3rem;
+  transition: var(--smooth-transition);
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: #fb3640;
+  transform: scale(1.15);
+  box-shadow: 0 4px 15px rgba(251, 54, 64, 0.4);
+}
+
+.footer-copyright {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .footer-section {
+    width: 100%;
+    max-width: 280px;
+  }
 }
 
 .popup-overlay {
@@ -294,15 +373,15 @@ footer {
 }
 
 .popup-box {
-  background: white;
+  background: #1a1a1a;
   padding: 2rem;
   border-radius: 20px;
   max-width: 400px;
   width: 90%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   transform: scale(0.8);
   transition: transform 0.3s ease;
-  color: var(--text-dark);
+  color: #ffffff;
   text-align: center;
 }
 
@@ -312,22 +391,24 @@ footer {
 
 .popup-box h3 {
   margin-bottom: 1rem;
-  color: var(--primary-color);
+  color: #fb3640;
 }
 
 .popup-box input {
   width: 100%;
   padding: 0.75rem;
   margin: 1rem 0;
-  border: 2px solid #ddd;
+  border: 2px solid #333;
   border-radius: 8px;
   font-family: "Jost", sans-serif;
   font-size: 1rem;
   transition: border 0.2s;
+  background: #1a1a1a;
+  color: #ffffff;
 }
 
 .popup-box input:focus {
-  border-color: var(--secondary-color);
+  border-color: #fb3640;
   outline: none;
 }
 
@@ -355,7 +436,7 @@ footer {
 }
 
 .popup-actions .btn-batal {
-  background-color: #6c757d;
+  background-color: #444;
   color: white;
 }
 
@@ -364,7 +445,7 @@ footer {
 }
 
 .popup-actions .btn-batal:hover {
-  background-color: #5a6268;
+  background-color: #333;
 }
 
 .popup-close {
@@ -373,12 +454,12 @@ footer {
   right: 15px;
   font-size: 1.8rem;
   cursor: pointer;
-  color: #aaa;
+  color: #cccccc;
   transition: color 0.2s;
 }
 
 .popup-close:hover {
-  color: var(--accent-color);
+  color: #fb3640;
 }
 
 @media (max-width: 768px) {
@@ -395,11 +476,11 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--text-white);
+    background-color: #1a1a1a;
     width: 100%;
     height: 100vh;
     padding: 2rem;
-    box-shadow: -5px 0 16px rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 0 16px rgba(0, 0, 0, 0.3);
     align-items: flex-start;
     transition: var(--smooth-transition);
   }
