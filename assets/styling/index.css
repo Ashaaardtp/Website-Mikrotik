@@ -25,6 +25,17 @@
   box-sizing: border-box;
 }
 
+/* Text Selection Color - Landing Page (Red) */
+::selection {
+  background-color: #fb3640;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #fb3640;
+  color: #ffffff;
+}
+
 body {
   font-family: "Jost", sans-serif;
   background-color: var(--background-dark);

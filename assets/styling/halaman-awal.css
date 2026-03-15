@@ -24,6 +24,17 @@
   box-sizing: border-box;
 }
 
+/* Text Selection Color - Halaman Awal (Orange) */
+::selection {
+  background-color: #f97316;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #f97316;
+  color: #ffffff;
+}
+
 /* List Styles */
 ol {
   list-style: decimal;
@@ -66,7 +77,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.05);
 }
 
 .hamburger {
@@ -104,7 +116,7 @@ nav ul li a {
 }
 
 nav ul li a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -182,7 +194,11 @@ nav .foto-profile:hover {
   align-items: center;
   padding: 2rem;
   text-align: center;
-  background: linear-gradient(135deg, rgba(251, 54, 64, 0.1), rgba(251, 54, 64, 0.02));
+  background: linear-gradient(
+    135deg,
+    rgba(251, 54, 64, 0.1),
+    rgba(251, 54, 64, 0.02)
+  );
 }
 
 .featured-icon {
@@ -194,7 +210,11 @@ nav .foto-profile:hover {
   justify-content: center;
   font-size: 2rem;
   color: var(--secondary-color);
-  background: linear-gradient(135deg, rgba(251, 54, 64, 0.2), rgba(251, 54, 64, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(251, 54, 64, 0.2),
+    rgba(251, 54, 64, 0.05)
+  );
   margin-bottom: 1rem;
 }
 
@@ -253,17 +273,29 @@ nav .foto-profile:hover {
 }
 
 .basic-bento .card-icon {
-  background: linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(74, 222, 128, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(74, 222, 128, 0.2),
+    rgba(74, 222, 128, 0.05)
+  );
   color: #4ade80;
 }
 
 .intermediate-bento .card-icon {
-  background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(96, 165, 250, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(96, 165, 250, 0.2),
+    rgba(96, 165, 250, 0.05)
+  );
   color: #60a5fa;
 }
 
 .expert-bento .card-icon {
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(251, 191, 36, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(251, 191, 36, 0.2),
+    rgba(251, 191, 36, 0.05)
+  );
   color: #fbbf24;
 }
 
@@ -278,9 +310,15 @@ nav .foto-profile:hover {
   font-weight: 700;
 }
 
-.basic-bento .title { color: #4ade80; }
-.intermediate-bento .title { color: #60a5fa; }
-.expert-bento .title { color: #fbbf24; }
+.basic-bento .title {
+  color: #4ade80;
+}
+.intermediate-bento .title {
+  color: #60a5fa;
+}
+.expert-bento .title {
+  color: #fbbf24;
+}
 
 .stars {
   font-size: 0.9rem;
@@ -302,7 +340,11 @@ nav .foto-profile:hover {
   justify-content: center;
   gap: 0.5rem;
   padding: 12px 24px;
-  background: linear-gradient(135deg, var(--secondary-color), #d12b35);
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    #d12b35
+  );
   color: var(--text-white);
   text-decoration: none;
   border-radius: 12px;
@@ -344,7 +386,11 @@ nav .foto-profile:hover {
 .image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    transparent
+  );
   display: flex;
   align-items: flex-end;
   padding: 1rem;
@@ -368,7 +414,11 @@ nav .foto-profile:hover {
 /* Notice Bento */
 .notice-bento {
   grid-column: span 12;
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.02));
+  background: linear-gradient(
+    135deg,
+    rgba(251, 191, 36, 0.1),
+    rgba(251, 191, 36, 0.02)
+  );
   border-color: rgba(251, 191, 36, 0.3);
 }
 
@@ -389,7 +439,11 @@ nav .foto-profile:hover {
   justify-content: center;
   font-size: 1.5rem;
   color: #fbbf24;
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(251, 191, 36, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(251, 191, 36, 0.2),
+    rgba(251, 191, 36, 0.05)
+  );
   margin-bottom: 1rem;
 }
 
@@ -426,7 +480,11 @@ nav .foto-profile:hover {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--text-white), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--text-white),
+    var(--secondary-color)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -476,6 +534,7 @@ footer {
 }
 
 .footer-title {
+  text-align: center;
   color: var(--text-white);
   font-size: 1.2rem;
   margin-bottom: 1rem;
