@@ -358,6 +358,32 @@ nav .foto-profile:hover {
   box-shadow: var(--shadow-glow);
 }
 
+/* Button to Index Page */
+.btn-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 12px 24px;
+  background: linear-gradient(
+    135deg,
+    #f97316,
+    #ea580c
+  );
+  color: var(--text-white);
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: var(--smooth-transition);
+  font-family: "Jost", sans-serif;
+  margin-top: 1.5rem;
+}
+
+.btn-index:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+}
+
 /* Image Bento Cards */
 .image-bento {
   grid-column: span 4;
