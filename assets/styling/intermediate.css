@@ -152,7 +152,7 @@ article,
   background: #1a1a2e;
   border: none;
   border-radius: 0;
-  padding: 2rem;
+  padding: 1rem;
   margin: 0;
   box-shadow: none;
 }
@@ -244,7 +244,7 @@ article p {
 
 .dropdown-content.active {
   max-height: fit-content;
-  padding: 1.5rem 2rem;
+  padding: 1rem;
 }
 
 .dropdown-content p {

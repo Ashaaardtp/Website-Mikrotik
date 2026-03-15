@@ -239,7 +239,7 @@ article p {
 
 .dropdown-content.active {
   max-height: fit-content;
-  padding: 1.5rem 2rem;
+  padding: 1rem;
 }
 
 .dropdown-content p {
