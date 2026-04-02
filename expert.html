@@ -77,6 +77,299 @@
       </nav>
     </header>
 
+    <main>
+      <article>
+        <h1>Selamat datang di halaman Expert</h1>
+        <p>
+          Oke, sampai sini berarti kalian udah
+          lewat tahap “bikin jaringan bisa jalan”
+          dan udah paham cara mikrotik berpikir
+          dari sisi dasar sampai menengah. Nah di
+          level expert ini, tugasnya bukan cuma
+          ngatur supaya internet nyala, tapi
+          supaya internetnya juga “punya aturan
+          main”. Jadi sekarang kita bakal belajar
+          cara bikin mikrotik bertindak kayak
+          satpam yang tegas: ada yang boleh, ada
+          yang ditahan, dan ada yang dibuat
+          seperti nggak pernah ada.
+        </p>
+        <p>
+          Dua senjata yang bakal kita pakai di
+          sini adalah DNS Static dan Web Proxy.
+          DNS Static itu kerjanya di tahap
+          “penunjuk jalan” (dia bantu memutuskan
+          alamat tujuan dari nama domain),
+          sedangkan Web Proxy itu pegangannya
+          lebih ke “lalu lintas web”-nya (jadi
+          mikrotik bisa ngatur permintaan saat
+          client lagi browsing atau download).
+          Kombinasi dua fitur ini bikin kontrol
+          kamu makin rapi: blokir website bisa
+          terasa lebih cepat dan blokir file
+          tertentu bisa lebih spesifik. Gaskeun ke
+          dropdown di bawah, biar kamu punya bahan
+          yang siap dipraktekin.
+        </p>
+      </article>
+
+      <section
+        class="section-satu submodul"
+        id="satu">
+        <button class="buttons" id="btn-dropdown">
+          Buka Sub-Modul
+        </button>
+        <div class="dropdown-content">
+          <p>
+            Di sub-modul ini kamu bakal belajar
+            cara “mengelabui” akses website dengan
+            memanfaatkan DNS Static. Intinya,
+            ketika client minta akses ke sebuah
+            domain, mikrotik ikut campur di bagian
+            penerjemahan nama domain menjadi
+            alamat IP. Nah, kalau domainnya kita
+            arahin ke alamat yang tidak semestinya
+            (misalnya IP blackhole atau alamat
+            yang tidak bisa dijangkau), maka
+            website tujuan akan terasa seperti
+            benar-benar mati. Serius, rasanya
+            kayak kamu ngunci pintu sebelum orang
+            sempat nginjek gagang pintunya.
+          </p>
+          <p>
+            Supaya aturan DNS Static ini kebaca
+            oleh client, pastikan DNS yang
+            digunakan client memang mengarah ke
+            Mikrotik. Biasanya ini beres kalau
+            kamu sudah mengatur DHCP agar mengirim
+            DNS server mikrotik (opsi DNS di
+            DHCP/option DNS), atau kamu set DNS
+            manual di perangkat client ke alamat
+            IP mikrotik. Setelah itu, tinggal
+            masuk menu IP > DNS > Static lalu
+            tambahkan entri untuk domain yang mau
+            diblokir beserta alamat
+            pengalihan/blackhole-nya. Setelah
+            selesai, coba tes dari client: akses
+            domain yang diblokir harusnya gagal,
+            sementara domain lain tetap jalan
+            normal.
+          </p>
+
+          <ol class="langkah-langkah">
+            <figure>
+              <li>
+                <figcaption>
+                  Langkah awal, kamu akses menu IP
+                  > DNS
+                </figcaption>
+
+                <img
+                  src="./assets/images/UI Mikrotik/IP - DNS.png"
+                  alt="UI Mikrotik."
+                  class="zoom" />
+
+                <figcaption>
+                  Setelah itu ada beberapa hal
+                  yang harus kalian isi. Kalian
+                  bisa lihat gambar dibawah.
+                </figcaption>
+                <img
+                  src="./assets/images/UI Mikrotik/DNS Set.png"
+                  alt="UI Mikrotik."
+                  class="zoom" />
+
+                <figcaption>
+                  Nah disini kalian bisa lihat ada
+                  dua IP 8.8.8.8 itu IP Google dan
+                  yang 1.1.1.1 itu IP CloudFlare,
+                  setelah ini kalian klik Static
+                  yang ada di kanan.
+                </figcaption>
+                <img
+                  src="./assets/images/UI Mikrotik/tombol static.png"
+                  alt="UI Mikrotik."
+                  class="zoom" />
+
+                <figcaption>
+                  Setelah itu kalian bisa klik
+                  tombol + dan menambahkan
+                  beberapa konfigurasi, lihat
+                  gambar dibawah.
+                </figcaption>
+                <img
+                  src="./assets/images/UI Mikrotik/Plus Static.png"
+                  alt="UI Mikrotik."
+                  class="zoom" />
+                <img
+                  src="./assets/images/UI Mikrotik/wwwlinuxorg.png"
+                  alt="UI Mikrotik."
+                  class="zoom" />
+
+                <figcaption>
+                  Apasih itu yang di isi?Pertama
+                  yang kalian ini adalh kolom
+                  Regexp, ini adalah website yang
+                  akan kalian Blok, jadi jika ada
+                  yang ketik persis www.linux.org
+                  nantinya tidak akan terbuka,
+                  sebenernya kenapa website tak
+                  bisa dibuka? Karena kita memakai
+                  IP loopback yaitu 127.0.0.1 yang
+                  mana ini akan mengirim kita ke
+                  alamat kita sendiri, jadi
+                  sebutannya adalah redirect
+                </figcaption>
+                <figcaption>
+                  Wokeh, kalau kalian bertanya
+                  tanya, gimana kalau orang yang
+                  mengakses linux hanya
+                  menggunakan linux.org tanpa www,
+                  bukannya itu akan tembus karena
+                  yang kita setting memakai www?
+                  Nahh dalam kasus ini kalian
+                  harus membuat satu lagi atau
+                  bahkan lebih dari dua untuk
+                  menyesuaikan dengan banyak tipe
+                  user. Kalian tinggal klik tombol
+                  + dan lanjut kalian ubah saja
+                  Regexp nya menjadi linux.org.
+                </figcaption>
+
+                <img
+                  src="./assets/images/UI Mikrotik/linuxorg.png"
+                  alt="UI Mikrotik."
+                  class="zoom" />
+
+                <figcaption>
+                  Sipp, eh tunggu. Belum selesai,
+                  kalian harus setting sesuatu
+                  didalam menu Firewall, jadi gas
+                  langsung kesana aja. Lalu buka
+                  tab NAT.
+                </figcaption>
+
+                <figcaption>
+                  Kalau dah sampe di NAT kalian
+                  langsung saja + dan tambahkan
+                  ini didalam popup.
+                </figcaption>
+                <img
+                  src="./assets/images/UI Mikrotik/General blok web.png"
+                  alt="UI Mikrotik."
+                  class="zoom" />
+                <img
+                  src="./assets/images/UI Mikrotik/action bw.png"
+                  alt="UI Mikrotik."
+                  class="zoom" />
+
+                <figcaption>
+                  Oke, sekarang kita bedah dikit
+                  ya biar kebayang:
+                  <strong>dstnat</strong> itu
+                  artinya kita melakukan
+                  “perubahan tujuan” untuk paket
+                  yang masuk. Nah, yang kita incar
+                  di sini adalah
+                  <strong>protocol UDP</strong>
+                  dengan
+                  <strong>Dst. Port 53</strong>,
+                  karena request <em>DNS</em> dari
+                  client memang umumnya lewat
+                  jalur <em>UDP 53</em>. Jadi
+                  intinya: kalau ada yang nanya
+                  “IP-nya domain ini apa?”, router
+                  nangkep dulu pertanyaannya.
+                </figcaption>
+
+                <figcaption>
+                  Lalu
+                  <strong>action redirect</strong>
+                  dengan
+                  <strong>port 53</strong> itu
+                  artinya paket DNS tadi diarahkan
+                  ke layanan DNS punya Mikrotik
+                  sendiri. Kenapa ini penting?
+                  Karena setelah DNS-nya “lewat”
+                  Mikrotik, baru aturan
+                  <strong>DNS Static</strong> kamu
+                  bisa bekerja: domain yang
+                  diblokir akan dikembalikan ke
+                  alamat “jebakan” (misalnya
+                  loopback seperti
+                  <strong>127.0.0.1</strong>),
+                  jadi website-nya terasa seperti
+                  nggak ada.
+                </figcaption>
+              </li>
+
+              <p>
+                Oke segitu aja materi blokir web
+                pakai DNS, jujur sepengalaman ku
+                lebih efektif blokir web pakai DNS
+                ketimbang firewall dan layer7.
+                Kalian bisa coba aja di lab kalau
+                ada praktek blokir web pakai web
+                proxy, yah mungkin itu akan
+                menguji kesabaran kalian wkwkwk,
+                makannya aku masukkin cara ini
+                karena jujur persentase
+                berhasilnya tinggi.
+              </p>
+            </figure>
+          </ol>
+        </div>
+      </section>
+
+      <section
+        class="section-dua submodul"
+        id="dua">
+        <button class="buttons" id="btn-dropdown">
+          Buka Sub-Modul
+        </button>
+        <div class="dropdown-content">
+          <p>
+            Kalau DNS Static lebih fokus ke “nama
+            domain-nya” duluan, Web Proxy itu
+            fokusnya ke kontrol trafik web yang
+            lewat dari client. Jadi kamu bisa
+            bikin mikrotik bertindak sebagai
+            perantara: saat user melakukan
+            permintaan browsing atau download
+            file, aturan proxy bisa dimanfaatkan
+            untuk menolak file-file tertentu.
+            Dengan kata lain, webnya mungkin masih
+            bisa dibuka, tapi request download
+            yang mengandung file berbahaya
+            (misalnya ekstensi yang tidak
+            diinginkan) bisa kamu tahan. Santai,
+            tapi tetap tegas.
+          </p>
+          <p>
+            Konsep setingnya biasanya begini:
+            aktifkan Web Proxy di Mikrotik,
+            tentukan port/proxy settings-nya, lalu
+            pastikan client memakai proxy itu
+            (biasanya lewat pengaturan manual di
+            browser atau lewat konfigurasi DHCP
+            supaya client otomatis diarahkan ke
+            proxy). Setelah proxy aktif, masuk ke
+            bagian aturan akses (Web Proxy Access)
+            dan buat rule yang isinya menolak
+            request berdasarkan pola URL/ekstensi
+            file atau tipe konten yang terdeteksi
+            oleh proxy. Contoh praktis yang sering
+            dipakai: blok download dengan ekstensi
+            seperti .exe, .zip, atau .rar. Setelah
+            rule diterapkan, tes dengan mencoba
+            download dari client—yang diblokir
+            harus gagal, yang aman harus tetap
+            bisa.
+          </p>
+        </div>
+      </section>
+    </main>
+
     <nav class="module-navigation">
       <div class="nav-container">
         <a
@@ -98,7 +391,6 @@
         </a>
       </div>
     </nav>
-
     <footer>
       <div class="footer-container">
         <div class="footer-section">
