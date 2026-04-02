@@ -99,8 +99,6 @@
           bayangkan "serius".
         </p>
 
-        <p></p>
-
         <div>
           <div
             class="sepenting-apa-mikrotik-di-dunia-teknologi">
@@ -286,8 +284,8 @@
               </li>
 
               <img
-                src=""
-                alt="Sabar ya, aku lagi cari gambar UI nya."
+                src="./assets/images/UI Mikrotik/IP Wireless.png"
+                alt="UI Mikrotik."
                 class="zoom" />
             </figure>
             <figure>
@@ -313,8 +311,8 @@
               </li>
 
               <img
-                src=""
-                alt="Sabar ya, aku lagi cari gambar UI nya."
+                src="./assets/images/UI Mikrotik/DHCP Server/DHCP Setup.png"
+                alt="UI Mikrotik."
                 class="zoom" />
             </figure>
             <figure>
@@ -331,8 +329,8 @@
               </li>
 
               <img
-                src=""
-                alt="Sabar ya, aku lagi cari gambar UI nya."
+                src="./assets/images/UI Mikrotik/Addresses TO GIve Out Wireless.png"
+                alt="Mikrtotik Wireless."
                 class="zoom" />
             </figure>
 
@@ -363,7 +361,7 @@
               </li>
 
               <img
-                src=""
+                src="./assets/images/UI Mikrotik/"
                 alt="Sabar ya, aku lagi cari gambar UI nya."
                 class="zoom" />
             </figure>
@@ -393,7 +391,7 @@
               </li>
 
               <img
-                src=""
+                src="./assets/images/UI Mikrotik/Wireless AP Bridge.png"
                 alt="Sabar ya, aku lagi cari gambar UI nya."
                 class="zoom" />
             </figure>
@@ -490,7 +488,7 @@
               </li>
 
               <img
-                src=""
+                src="assets/images/UI Mikrotik/Ubah Security Profile.png"
                 alt="Sabar ya, aku lagi cari gambar UI nya."
                 class="zoom" />
             </figure>
@@ -709,7 +707,39 @@
           </p>
 
           <ol class="testing">
-            <h2>"On Progress"</h2>
+            <h2>Testing Ping ke Router</h2>
+            <p>Oke disini kita harusnya melakukan test ke Wireless dahulu, nah setelah kita melakukan tes ke wireless, karena IP kira masih 192.168.1.100 dan ini masih masuk ke range IP yang akan di blokir ke wireless, karena kita akan blokir router jadinya kita akan ubah IP PC kita menjadi 192.168.1.2-192.168.1.50, kenapa? Karena kita akan tes apakah jika client dengan IP segitu sudah Request Time Out (RTO) jika kita coba ping ke IP Router. Pertama tama kita akan mengubah IP client di tab leases yang ada di DHCP Server. Dibawah ini adalah menunya.</p>
+            <img
+                src="assets/images/UI Mikrotik/Leases.png"
+                class="zoom" />
+
+            <p>Diatas adalah menu Leases, yang akan kita lakukan adalah mengubah IP yang 192.168.1.100 menjadi 192.168.1.50 sebenernya bebas, asalkan masih berada didalam range IP nya. Gimana caranya mengubah? Kalau kalian langsung klik 2 kali, tidak akan bisa karena kalian harus mengubah IP nya menjadi IP Static dulu, karena sebelumnya adalah Dynamic yang kita dapat dari DHCP Server, cara ubahnya kita klik kanan lalu akan ada static disana, kalian klik saja, dan yang terjadi adalah huruf D yang tadinya ada, akan menghilang. Dan kalian bisa klik dua kali sekarang</p>
+            <img
+                src="assets/images/UI Mikrotik/Make Static.png"
+                class="zoom" />
+
+            <p>Ini adalah hal yang harus kalian ubah.</p>
+            <img
+                src="assets/images/UI Mikrotik/Edit IP.png"
+                class="zoom" />
+                <p>Lalu kalian bisa langsung Apply > OK.</p>
+
+                <br>
+                <br>
+
+                <p>Oke setelah mengubah, IP tidak akan langsung terubah tanpa kita reset dahulu, caranya kita ke cmd, windows + R > Ketik cmd > Enter. Dan disini kita masukkan ipconfig /renew, untuk memperbaharui IP Address PC kita menjadi .50, ini adalah gambarnya.</p>
+                <img
+                src="assets/images/UI Mikrotik/Ubah IP.png"
+                class="zoom" />
+                <p>Setelah sudah mengubah IP kalian bisa langsung coba ping ke IP Router, ini command nya: ping 192.168.1.1 <br> Lalu kita lihat apakah hasil nya RTO, kalau iya. Bagus berarti sudah berhasil kalian konfigurasinya.</p>
+                <img
+                src="assets/images/UI Mikrotik/Tes Ping Router Gagal.png"
+                class="zoom" />
+                <p>Setelah itu kita akan coba ping ke wireless, harusnya balasannya adalah reply. Karena tidak termasuk range yang akan di blkir oleh wireless.</p>
+                <img
+                src="assets/images/UI Mikrotik/Tes Ping Router Berhasil.png"
+                class="zoom" />
+                <p>Oke maaf ya kalau masih agak belibet penjelasan dari saya dan teman teman, kita mencoba memberikan yang terbak, sip kalian bisa lanjut ke blokir ping wireless sekarang</p>
           </ol>
 
           <hr />
@@ -874,7 +904,19 @@
               <hr />
 
               <ol class="testing">
-                <h2>"On Progress"</h2>
+                <h2>Testing Blokir Ping Wireless</h2>
+            <p>Disini kita akan melakukan tes blokir ping ke Wireless, langkahnya kalian bisa langsung buka command prompt (cmd) caranya dengan klik tombol windows + R lalu ketik cmd, lalu enter.</p>
+            <p>Lalu kalian bisa melakukan cek ip menggunakan ipconfig, lalu cek IP Address kalian berapa. Biasanya kalian akan mendapatkan IP terakhir, kita setting DHCP server yang LAN dengan 99 client dengan IP Terakhir 192.168.1.100, nah ini masuk ke rentang IP yang akan diblokir jika kita ping ke Wireless.</p>
+            <img
+                src="assets/images/UI Mikrotik/Tes Ping Wireless.png"
+                alt="UI Mikrotik"
+                class="zoom" />
+                <p>Di gambar diatas kalian akan melihat dua hal, yaitu aku memasukkan ipconfig. Dan ping 192.168.10.20, kenapa 192.168.10.20? Karena perangkat yang terhubung ke Wi-Fi mendapatkan IP segitu. Nah jika dibawah IP request time out (RTO) berarti konfigurasi kalian berhasil. Lalu coba kalian ping ke IP Router yaitu 192.168.1.1 dan balasannya harus reply kenapa? Karena IP 192.168.1.100 tidak termasuk ke range IP yang akan di blokir ke IP Router, dibawah ini adalah hasilnya.</p>
+              <img
+                src="assets/images/UI Mikrotik/Tes Ping Wireless (Ke Router).png"
+                alt="UI Mikrotik"
+                class="zoom" />
+          </ol>
               </ol>
             </figure>
 
@@ -954,7 +996,7 @@
               </li>
 
               <img
-                src="assets/images/UI Mikrotik/Jadwal Waktu/"
+                src="assets/images/UI Mikrotik/"
                 alt="UI Mikrotik"
                 class="zoom" />
             </figure>
@@ -988,7 +1030,7 @@
               </li>
 
               <img
-                src="assets/images/UI Mikrotik/Jadwal Waktu/"
+                src="assets/images/UI Mikrotik/SNTP Client.png"
                 alt="UI Mikrotik"
                 class="zoom" />
             </figure>
@@ -1003,15 +1045,15 @@
               </li>
 
               <img
-                src="assets/images/UI Mikrotik/Jadwal Waktu/IP.png"
+                src="assets/images/UI Mikrotik/Firewall/IP.png"
                 alt="UI Mikrotik"
                 class="zoom" />
               <img
-                src="assets/images/UI Mikrotik/Jadwal Waktu/Firewall.png"
+                src="assets/images/UI Mikrotik/Firewall/Firewall.png"
                 alt="UI Mikrotik"
                 class="zoom" />
               <img
-                src="assets/images/UI Mikrotik/Jadwal Waktu/Filter Rules & Add.png"
+                src="assets/images/UI Mikrotik/Blokir PING Router/Filter Rules & Plus.png"
                 alt="UI Mikrotik"
                 class="zoom" />
             </figure>
