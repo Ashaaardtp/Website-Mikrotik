@@ -1,7 +1,7 @@
 :root {
   --primary-color: #0d0d0d;
-  --secondary-color: #fbbf24;
-  --accent-color: #fbbf24;
+  --secondary-color: #34d399;
+  --accent-color: #34d399;
   --background-dark: #0a0a0a;
   --text-white: #ffffff;
   --text-light: #e0e0e0;
@@ -9,16 +9,16 @@
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 20px rgba(251, 191, 36, 0.3);
+  --shadow-glow: 0 0 20px rgba(52, 211, 153, 0.3);
   --smooth-transition: all 0.3s ease;
   --border-radius: 12px;
-  --gradient-start: #1a1a2e;
-  --gradient-mid: #1e1b4b;
-  --gradient-end: #312e81;
+  --gradient-start: #0f1a14;
+  --gradient-mid: #0a2e1f;
+  --gradient-end: #064e3b;
   --accent-gradient: linear-gradient(
     135deg,
-    #fbbf24,
-    #f59e0b
+    #34d399,
+    #059669
   );
 }
 
@@ -30,12 +30,12 @@
 
 /* Text Selection Color - Expert Page (Gold) */
 ::selection {
-  background-color: #fbbf24;
+  background-color: #34d399;
   color: #0d0d0d;
 }
 
 ::-moz-selection {
-  background-color: #fbbf24;
+  background-color: #34d399;
   color: #0d0d0d;
 }
 
@@ -152,7 +152,7 @@ main {
 }
 
 article {
-  background: #1a1a2e;
+  background: #0f1a14;
   border: none;
   border-radius: 0;
   padding: 2rem;
@@ -191,7 +191,7 @@ article p {
 .section-satu,
 .section-dua,
 .section-tiga {
-  background: #1a1a2e;
+  background: #0f1a14;
   border: none;
   border-radius: 0;
   margin: 0;
@@ -300,8 +300,8 @@ article p {
 .studi-kasus {
   background: linear-gradient(
     135deg,
-    rgba(251, 191, 36, 0.15),
-    rgba(251, 191, 36, 0.05)
+    rgba(52, 211, 153, 0.15),
+    rgba(52, 211, 153, 0.05)
   );
   border-left: 4px solid var(--secondary-color);
   padding: 1.5rem;
@@ -324,7 +324,7 @@ article p {
 }
 
 .module-navigation {
-  background: #1a1a2e;
+  background: #0f1a14;
   padding: 1.5rem;
 }
 
